@@ -1,0 +1,38 @@
+page-login,
+  .login {
+  button{
+      margin-left: 10px
+  }
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  #one {
+    position: absolute;
+    top:250px;
+    z-index: 10;
+  }
+
+  .h{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    font-weight: bold;
+    color: coral;
+    text-align: center;
+    z-index: 10;
+    font-size: 70px;
+  }
+
+  .fill {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // overflow: hidden;
+    // height: 100%;
+    // width: auto;
+    height: 515px;
+}
+
+
+}

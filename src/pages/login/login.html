@@ -1,0 +1,82 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Food Pool</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="signUp()" class="light">Sign up</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login">
+  <ion-slides autoplay=3000 loop=true style="height:100%;width:100%;" zoom>
+  
+    <ion-slide style="background-color:white;" class="fill">
+      <img class="fill" src="https://apis.xogrp.com/media-api/images/d2d7c5af-d3e0-4371-8e53-cc9d37b140d6~rs_768.h" alt="">
+    </ion-slide>
+  
+    <ion-slide style="background-color:white;" class="fill">
+      <img  class="fill" src="https://cdn.photographylife.com/wp-content/uploads/2014/06/Camera-Phone-Food-Photography-27.jpg" alt="">
+    </ion-slide>
+  
+    <!-- <ion-slide>
+      <img class="fill" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbvfNeOF-c4Gz2YUXGNfojS8IKmu7XeDUB8Gz5azVq7h3heYz6ghttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAODDlD_pkMIWRltonD2Y7FBgBI5Oz--PccGB9qpZi3Fqq7IDLhttp://veganfamilyrecipes.com/wp-content/uploads/2015/12/thai-biscuit-mini-sandwiches-768x1024.jpg" alt="" class="fill">      
+    </ion-slide> -->
+  
+  </ion-slides>
+    <h1 class="h" style="font-family: 'verdana'; font-size: 45px; color: black;">FoodPool</h1>
+  
+  <div id='one' style="width: 100%;">
+    <div style="margin-left:55px;margin-bottom:10px;">
+      <input [(ngModel)]="user.email" placeholder="Username" style="padding: 10px;margin:auto; width: 80%;" />
+
+    </div>
+    <div style="margin-left:55px;">
+         <input [(ngModel)]="user.password" placeholder="Password" style="padding: 10px;margin:auto; width: 80%;" />
+    </div>
+    <div style="text-align: center; padding: 10px;">
+           <button ion-button style="width: 80%; " (click)="login_via_email()">Login via Email</button>
+    </div>
+           <button ion-button (click)="fblogin()" round color="facebook" block class="margin-bottom" style="width:95%;text-align:center;">Login via Facebook</button>
+  </div>
+  <!-- <ion-card *ngIf="userData">
+    <ion-card-header>{{ userData.username }}</ion-card-header>
+    <img [src]="userData.picture" />
+    <ion-card-content>
+      <p>id: {{ userData.id }}</p>
+      
+      <p>Email: {{ userData.email }}</p>
+      <p>First Name: {{ userData.first_name }}</p>
+      <p>Friends: {{ userData.friends }}</p>
+      <p>Location: {{ userData.locations }}</p>
+      <p>Address: {{ userData.address }}</p>
+      
+      
+      
+    </ion-card-content>
+  </ion-card> -->
+  <!-- <button ion-button color="googleplus" block class="margin-top">Login via Google+</button>
+
+  <div text-center class="margin-top-20 secondary">OR LOGIN USING EMAIL</div>
+
+  <ion-list class="list-form">
+
+    <ion-item class="margin-top">
+      <ion-input type="text" placeholder="Email or username"></ion-input>
+    </ion-item>
+
+    <ion-item class="margin-top">
+      <ion-input type="password" placeholder="Password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="secondary" block (click)="login()">LOGIN</button>
+
+  <div text-center class="margin-top-20 secondary" (click)="forgotPwd()">Forgot password?</div> -->
+</ion-content>

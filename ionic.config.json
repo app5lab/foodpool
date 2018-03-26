@@ -1,0 +1,8 @@
+{
+  "name": "Food Pool",
+  "app_id": "8aaf160e",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

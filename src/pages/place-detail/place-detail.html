@@ -1,0 +1,202 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>Place Detail</ion-title>
+    <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class=" common-bg rlt">
+
+  <!-- content top -->
+  <div class="bg-image" [ngStyle]="{'background-image': 'url(' + place.photos[0].full_size + ')'}">
+
+    <div class="bg-overlay" padding>
+      <div>
+        <div class="pull-left">
+          <h3>{{ place.name}}</h3>
+          <span>{{ place.district }}, {{ place.city }}</span>
+        </div>
+
+        <div class="pull-right" text-right>
+          <div class="rating">{{ place.rating }}</div>
+          <div>{{ place.num_votes }} votes</div>
+        </div>
+
+        <div class="clear"></div>
+      </div>
+
+      <div margin-top>
+        <ion-badge color="favorite"  [hidden]="!workingHour.available">OPEN NOW</ion-badge>
+        <ion-badge color="primary"  [hidden]="workingHour.available">CLOSE NOW</ion-badge>
+        {{ workingHour.from }}h to {{ workingHour.to }}h
+        <div>
+          {{ place.num_reviews }} Reviews &bull;
+          {{ place.num_photos }} Photos
+        </div>
+      </div>
+
+      <div class="line" margin-top margin-bottom></div>
+      <div margin-bottom>
+        <a href="tel:{{ place.phone }}" class="btn-round">
+          <ion-icon name="call" color="favorite" ></ion-icon>
+        </a>
+        <div class="btn-round" (click)="addBookMark(place)">
+          <ion-icon name="bookmark" color="primary"  [hidden]="!place.bookmarked"></ion-icon>
+          <ion-icon name="bookmark" [hidden]="place.bookmarked"></ion-icon>
+        </div>
+        <div class="btn-round" (click)="goToMap()">
+          <ion-icon name="pin"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--address-->
+  <div padding class="light-bg">
+    <div class="strong">Address</div>
+    <span>{{ place.address }}</span>
+
+    <p>
+      <a href="{{ place.website }}" ion-text color="primary" >
+        Website
+        <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+      </a>
+    </p>
+  </div>
+  <div class="block-footer" padding text-right (click)="goToMap()">
+    <span ion-text color="primary" >Map & Directions</span>
+    <ion-icon color="primary"  name="arrow-forward"></ion-icon>
+  </div>
+
+  <ion-list class="accordion-list">
+    <!-- First Level -->
+    <ion-list-header *ngFor="let item of objectKeys(categorized);" no-lines no-padding>
+      <!-- Toggle Button -->
+      <button ion-item (click)="toggleSection(item)" detail-none [ngClass]="{'section-active': categorized[item].open, 'section': !categorized[item].open}">
+        <ion-icon item-left name="arrow-forward" *ngIf="!categorized[item].open"></ion-icon>
+        <ion-icon item-left name="arrow-down" *ngIf="categorized[item].open"></ion-icon>
+        {{ item }}
+      </button>
+
+      <div *ngFor="let product of objectKeys(categorized[item])">
+        <div *ngIf="product != 'open'">
+        <ion-list *ngIf="categorized[item].open" no-lines>
+          <!-- Second Level -->
+          <ion-list-header  no-padding>
+            <!-- Toggle Button -->
+            <div class="child" ion-item (click)="toggleItem(categorized[item][product])" detail-none>
+              <ion-icon item-left name="add"  *ngIf="!categorized[item][product].open"></ion-icon>
+              <ion-icon item-left name="close" *ngIf="categorized[item][product].open"></ion-icon>
+              {{ categorized[item][product].item[0].name }}
+            <p text-wrap text-lowercase >{{ categorized[item][product].item[0].description }}</p>
+            </div>
+
+            <ion-list *ngIf="categorized[item][product].open">
+              <!-- Third Level  -->
+              <ion-item *ngFor="let final of categorized[item][product].item;" detail-none class="child-item" text-wrap (click)="add_to_cart(final)">
+                <h2>{{ final.variation_name }}</h2>
+                <!-- <p text-lowercase>{{ final.description }}</p> -->
+                <button ion-button outline item-end >{{ final.variation_price }}</button>
+              </ion-item>
+            </ion-list>
+    
+          </ion-list-header>
+        </ion-list>
+        </div>        
+    </div>
+    </ion-list-header>
+  </ion-list>
+
+  <!-- <ion-item-group *ngFor="let category of objectKeys(categorized)">
+    <ion-item-divider bgColor class="strong uppercase" style="text-align:center;">{{ category }}</ion-item-divider>
+    <ion-item *ngFor="let item of objectKeys(categorized[category])" (click)="add(categorized[category][item].item[0])">
+      <span>{{ categorized[category][item].item[0].name }}</span>
+       <span class="badge" *ngIf="categorized[category][item].item[0].qty != 0">
+        <ion-badge item-end>{{categorized[category][item].item[0].qty}}</ion-badge>
+      </span>
+      <span class="pull-right">Rs.{{categorized[category][item].item[0].variation_price}}</span>
+      <button ion-button color="primary" class="pull-down custom" (click)="customize(item,$event)">Customize</button>
+      
+    </ion-item>
+    
+  </ion-item-group> -->
+
+  <!-- photos -->
+  <div padding class="light-bg margin-top-20">
+    <div class="strong">Photos</div>
+
+    <ion-grid class="grid-no-padding">
+      <ion-row>
+        <ion-col width-25 *ngFor="let photo of limitArray(place.photos, 4)">
+          <img class="round" src="{{ photo.thumb }}" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button  ion-button color="favorite"  block>
+      Add photo
+    </button>
+  </div>
+  <div class="block-footer" padding text-right (click)="goToPhotos()">
+    <span ion-text color="primary" >See All Photos</span>
+    <ion-icon color="primary"  name="arrow-forward"></ion-icon>
+  </div>
+
+  <!-- Reviews -->
+  <div padding class="light-bg margin-top-20">
+    <div class="strong">Reviews</div>
+    <div margin-top class="secondary">RECENT REVIEWS</div>
+    <ion-list class="list-no-border">
+      <ion-item *ngFor="let review of place.reviews" text-wrap>
+        <ion-avatar item-left>
+          <img src="{{ review.profile_picture }}" alt="">
+        </ion-avatar>
+        <div class="strong">{{ review.username }}</div>
+        <div class="text-sm">
+          <span class="strong">RATED</span>
+          <span class="rating">{{ review.rating }}</span>
+          {{ review.comment }}
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="block-footer" padding text-right (click)="goToReviews()">
+    <span ion-text color="primary" >Read All Review({{ place.num_reviews }})</span>
+    <ion-icon color="primary"  name="arrow-forward"></ion-icon>
+  </div>
+
+  <!-- Other info -->
+  <div padding class="light-bg margin-top-20">
+    <span class="strong">Hours</span>
+    <ion-badge color="favorite"  [hidden]="!workingHour.available">OPEN NOW</ion-badge>
+    <ion-badge color="primary"  [hidden]="workingHour.available">CLOSE NOW</ion-badge>
+    <div class="strong">
+      {{ workingHour.from }}h to {{ workingHour.to }}h
+    </div>
+    <span ion-text color="primary" >View All Days</span>
+
+    <div class="strong" margin-top>Cuisines</div>
+    <div>{{ place.cuisines }}</div>
+
+    <div class="strong" margin-top>Cost</div>
+    <div>{{ place.cost | currency:'USD':true }}</div>
+
+    <div>
+      <ion-icon name="card"></ion-icon>
+      <span *ngIf="place.accepted_card && place.accepted_cash">Cash & card accepted</span>
+      <span *ngIf="place.accepted_card && !place.placeaccepted_cash">Card accepted</span>
+      <span *ngIf="!place.accepted_card && place.accepted_cash">Cash accepted</span>
+    </div>
+
+    <div class="strong" margin-top>Highlights</div>
+    <div *ngFor="let item of place.highlights">
+      <ion-icon name="checkmark-circle" color="favorite" ></ion-icon>
+      {{ item }}
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,33 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "com.hassan.foodpool"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.hassan.foodpool"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "2084422965110686",
+      "APP_NAME": "foodpool",
+      "PACKAGE_NAME": "com.hassan.foodpool"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.hassan.foodpool"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.hassan.foodpool"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.hassan.foodpool"
+    }
+  }
+}

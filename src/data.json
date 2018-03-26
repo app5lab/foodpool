@@ -1,0 +1,37 @@
+{
+    "posts": [
+        {
+            "type": "rc",
+            "text": "Try the best cafe in town!",
+            "image":"https://www.stayathomemum.com.au/cache/555x700-0/wp-content/uploads/2011/11/Pasta-Carbonara.jpg",
+            "restaurant": {
+                "id": 1,
+                "name": "Arcadian",
+                "rating": 4.5,
+                "image": "https://nishatemporium.com/directory/images/arcadiancafe.jpg"
+            }
+        },
+        {
+            "type": "rc",
+            "text": "Join the Roadies!",
+            "image": "https://c.tribune.com.pk/2016/05/BYON.jpg",
+            "restaurant": {
+                "id": 2,
+                "name": "HOWDY!",
+                "rating": 4.2,
+                "image": "https://s.rozee.pk/company_logos/88/cpx_cpLogo_97288.jpg"
+            }
+        },
+        {
+            "type": "rc",
+            "text": "BEST BURGER EVER?",
+            "image": "http://bk-emea-prd.s3.amazonaws.com/sites/burgerking.co.uk/files/Whopper_detail.png",
+            "restaurant": {
+                "id": 3,
+                "name": "BURGER KING!",
+                "rating": 4.5,
+                "image": "https://upload.wikimedia.org/wikipedia/sco/3/3a/Burger_King_Logo.svg"
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+page-places,
+.places {
+  ion-card {
+
+    ion-card-header {
+
+      padding-bottom: 0;
+
+      & > div {
+        margin-bottom: 5px;
+      }
+
+      & > div:last-child {
+        border-bottom: 1px solid color($colors, bgColor);
+      }
+    }
+  }
+}

@@ -100,7 +100,8 @@
               <ion-item *ngFor="let final of categorized[item][product].item;" detail-none class="child-item" text-wrap (click)="add_to_cart(final)">
                 <h2>{{ final.variation_name }}</h2>
                 <!-- <p text-lowercase>{{ final.description }}</p> -->
-                <button ion-button outline item-end >{{ final.variation_price }}</button>
+                <button ion-button outline item-end >Qty {{ final.qty }}</button>                
+                <button ion-button outline item-end >Rs.{{ final.variation_price }}</button>
               </ion-item>
             </ion-list>
     

@@ -35,7 +35,7 @@ import {SelectLocationPage} from '../pages/select-location/select-location';
 import {SignUpPage} from '../pages/sign-up/sign-up';
 import {UserPage} from '../pages/user/user';
 import { HttpModule } from '@angular/http';
-import {HTTP} from '@ionic-native/http'
+import {HTTP} from '@ionic-native/http';
 // end import pages
 
 
@@ -115,7 +115,7 @@ import {HTTP} from '@ionic-native/http'
     CollectionService,
     ReviewService,
     Facebook,
-    HTTP
+    HTTP,
     /* import services */
   ]
 })

@@ -42,10 +42,12 @@ export class PlaceDetailPage {
       this.objectKeys(this.categorized).forEach(categories => {
         var keys = this.objectKeys(this.categorized[categories]);
         keys.forEach(key => {
-          if(items.find(x => {return x.id == key}) != null)
+          var temp=items.find(x => {return x.id == key})
+          if(temp != null)
              this.categorized[categories][key].item.forEach(food => {
-               console.log(food);
-               
+               if(food.variation_name==temp.variation_name)
+                  food.qty=temp.qty
+
              });
         })
       });
@@ -60,6 +62,7 @@ export class PlaceDetailPage {
     this.workingHour = this.getWorkingHours(this.place.working_hours);
   }
   add_to_cart(item){
+  
     item.qty = item.qty +1
     var items = []
     if(localStorage.getItem('cart') == null){

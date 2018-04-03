@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -32,7 +32,7 @@ var ForgotPasswordPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-forgot-password',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\forgot-password\forgot-password.html"*/'<!--\n\n  Generated template for the ForgotPasswordPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="secondary" >\n\n    <ion-title>Forgot Password?</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="forgot-password">\n\n  <ion-list class="list-form">\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Email"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button  ion-button color="secondary"  block>SUBMIT</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\forgot-password\forgot-password.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], ForgotPasswordPage);
     return ForgotPasswordPage;
 }());
@@ -48,10 +48,10 @@ var ForgotPasswordPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainTabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__collections_collections__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__feed_feed__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__account_account__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__collections_collections__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__feed_feed__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__account_account__ = __webpack_require__(218);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -85,7 +85,7 @@ var MainTabsPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-main-tabs',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\main-tabs\main-tabs.html"*/'<!--\n\n  Generated template for the MainTabsPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-tabs color="primary" selectedIndex="0">\n\n  <ion-tab tabIcon="home" tabTitle="Home" [root]="tabHome"></ion-tab>\n\n  <ion-tab tabIcon="albums" tabTitle="Collections" [root]="tabCollections"></ion-tab>\n\n  <ion-tab tabIcon="paper" tabTitle="Feed" [root]="tabFeed"></ion-tab>\n\n  <ion-tab tabIcon="contact" tabTitle="Account" [root]="tabAccount"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\main-tabs\main-tabs.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], MainTabsPage);
     return MainTabsPage;
 }());
@@ -102,7 +102,7 @@ var MainTabsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filters_filters__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filters_filters__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__place_detail_place_detail__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_search__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -199,7 +199,7 @@ var PlacesPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-places',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\places\places.html"*/'<!--\n\n  Generated template for the PlacesPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Places</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button  ion-button (click)="goToSearch()">\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n      <button  ion-button (click)="showFilters()">\n\n        <ion-icon name="options"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg">\n\n  <ion-card *ngFor="let place of places" (click)="viewPlace(place.id)">\n\n    <ion-card-header>\n\n      <!-- title -->\n\n      <div>\n\n        <span class="strong">{{ place.name }}</span>\n\n        <span class="rating pull-right">{{ place.rating }}</span>\n\n      </div>\n\n\n\n      <!--sub title-->\n\n      <div class="uppercase text-sm secondary">\n\n        {{ place.district }}, {{ place.city }}\n\n      </div>\n\n\n\n      <!-- extra info -->\n\n      <div class="text-sm secondary" padding-bottom>\n\n        {{ place.num_reviews }} Reviews &bull;\n\n        {{ place.num_bookmarks }} Bookmarks &bull;\n\n        {{ place.num_check_in }} Been There\n\n      </div>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-4 class="secondary">Cuisines</ion-col>\n\n          <ion-col width-66>{{ place.cuisines }}</ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-4 class="secondary">Cost</ion-col>\n\n          <ion-col width-66>{{ place.cost }}</ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-4 class="secondary">Hours</ion-col>\n\n          <ion-col width-66>{{ getWorkingHours(place.working_hours) }}</ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col width-25 *ngFor="let photo of limitArray(place.photos, 4)">\n\n            <img class="round" src="{{ photo.thumb }}" alt="">\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\places\places.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
     ], PlacesPage);
     return PlacesPage;
 }());
@@ -253,7 +253,7 @@ var MapPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-map',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/'<!--\n\n  Generated template for the MapPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Map</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]])
     ], MapPage);
     return MapPage;
 }());
@@ -268,7 +268,7 @@ var MapPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mock_reviews__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mock_reviews__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -347,7 +347,7 @@ var SearchPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-search',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\search\search.html"*/'<!--\n\n  Generated template for the SearchPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Search</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Restaurant, cuisine or dish..."></ion-input>\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    SUGGESTIONS\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    RECENT SEARCHES\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\search\search.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], SearchPage);
     return SearchPage;
 }());
@@ -356,7 +356,52 @@ var SearchPage = (function () {
 
 /***/ }),
 
-/***/ 121:
+/***/ 111:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartviewPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the CartviewPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CartviewPage = (function () {
+    function CartviewPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    CartviewPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CartviewPage');
+    };
+    CartviewPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cartview',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/'\n\n    <ion-content padding="\'true\'" class="has-header">\n\n        <div>\n\n            <p>\n\n                <strong></strong>\n\n            </p>\n\n        </div>\n\n        <button ng-click="checkout()" class="button button-positive button-block ">Check Out</button>\n\n		\n\n		<div ng-repeat="item in cart"   >\n\n			<div class="list card" >\n\n				<div class="item item-divider"> </div>\n\n				<div class="item item-body">\n\n				\n\n					<form class="list"></form>\n\n					<div>\n\n						<p>\n\n							<strong> &#8377; </strong>\n\n						</p>\n\n					</div>\n\n					<div class="button-bar">\n\n						<button ng-click="removeFromCart(item.cart_item_id)" class="button button-assertive button-block button-small icon ion-android-delete" ></button>\n\n						<button class="button button-stable button-clear button-block button-small icon ion-plus" ng-click="inc(item.cart_item_id)"></button>\n\n						<button class="button button-stable button-clear button-block button-small"></button>\n\n						<button class="button button-stable button-clear button-block  icon ion-minus" ng-click="dec(item.cart_item_id)" ></button>\n\n					</div>\n\n				</div>\n\n			</div>\n\n		</div>\n\n		\n\n		\n\n		\n\n		\n\n    </ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], CartviewPage);
+    return CartviewPage;
+}());
+
+//# sourceMappingURL=cartview.js.map
+
+/***/ }),
+
+/***/ 122:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -369,28 +414,36 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 121;
+webpackEmptyAsyncContext.id = 122;
 
 /***/ }),
 
-/***/ 161:
-/***/ (function(module, exports) {
+/***/ 162:
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
+var map = {
+	"../pages/cartview/cartview.module": [
+		301,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
 	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 161;
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 162;
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 204:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -398,9 +451,9 @@ webpackEmptyAsyncContext.id = 161;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__forgot_password_forgot_password__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sign_up_sign_up__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sign_up_sign_up__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_tabs_main_tabs__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_facebook__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_facebook__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_http__ = __webpack_require__(110);
@@ -505,7 +558,7 @@ var LoginPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Food Pool</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="signUp()" class="light">Sign up</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="login">\n\n  <ion-slides autoplay=3000 loop=true style="height:100%;width:100%;" zoom>\n\n  \n\n    <ion-slide style="background-color:white;" class="fill">\n\n      <img class="fill" src="https://apis.xogrp.com/media-api/images/d2d7c5af-d3e0-4371-8e53-cc9d37b140d6~rs_768.h" alt="">\n\n    </ion-slide>\n\n  \n\n    <ion-slide style="background-color:white;" class="fill">\n\n      <img  class="fill" src="https://cdn.photographylife.com/wp-content/uploads/2014/06/Camera-Phone-Food-Photography-27.jpg" alt="">\n\n    </ion-slide>\n\n  \n\n    <!-- <ion-slide>\n\n      <img class="fill" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbvfNeOF-c4Gz2YUXGNfojS8IKmu7XeDUB8Gz5azVq7h3heYz6ghttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAODDlD_pkMIWRltonD2Y7FBgBI5Oz--PccGB9qpZi3Fqq7IDLhttp://veganfamilyrecipes.com/wp-content/uploads/2015/12/thai-biscuit-mini-sandwiches-768x1024.jpg" alt="" class="fill">      \n\n    </ion-slide> -->\n\n  \n\n  </ion-slides>\n\n    <h1 class="h" style="font-family: \'verdana\'; font-size: 45px; color: black;">FoodPool</h1>\n\n  \n\n  <div id=\'one\' style="width: 100%;">\n\n    <div style="margin-left:55px;margin-bottom:10px;">\n\n      <input [(ngModel)]="user.email" placeholder="Username" style="padding: 10px;margin:auto; width: 80%;" />\n\n\n\n    </div>\n\n    <div style="margin-left:55px;">\n\n         <input [(ngModel)]="user.password" placeholder="Password" style="padding: 10px;margin:auto; width: 80%;" />\n\n    </div>\n\n    <div style="text-align: center; padding: 10px;">\n\n           <button ion-button style="width: 80%; " (click)="login_via_email()">Login via Email</button>\n\n    </div>\n\n           <button ion-button (click)="fblogin()" round color="facebook" block class="margin-bottom" style="width:95%;text-align:center;">Login via Facebook</button>\n\n  </div>\n\n  <!-- <ion-card *ngIf="userData">\n\n    <ion-card-header>{{ userData.username }}</ion-card-header>\n\n    <img [src]="userData.picture" />\n\n    <ion-card-content>\n\n      <p>id: {{ userData.id }}</p>\n\n      \n\n      <p>Email: {{ userData.email }}</p>\n\n      <p>First Name: {{ userData.first_name }}</p>\n\n      <p>Friends: {{ userData.friends }}</p>\n\n      <p>Location: {{ userData.locations }}</p>\n\n      <p>Address: {{ userData.address }}</p>\n\n      \n\n      \n\n      \n\n    </ion-card-content>\n\n  </ion-card> -->\n\n  <!-- <button ion-button color="googleplus" block class="margin-top">Login via Google+</button>\n\n\n\n  <div text-center class="margin-top-20 secondary">OR LOGIN USING EMAIL</div>\n\n\n\n  <ion-list class="list-form">\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Email or username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button ion-button color="secondary" block (click)="login()">LOGIN</button>\n\n\n\n  <div text-center class="margin-top-20 secondary" (click)="forgotPwd()">Forgot password?</div> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_facebook__["a" /* Facebook */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_http__["a" /* HTTP */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_facebook__["a" /* Facebook */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_http__["a" /* HTTP */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -514,7 +567,7 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -559,7 +612,7 @@ var SignUpPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-sign-up',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\sign-up\sign-up.html"*/'<!--\n\n  Generated template for the SignUpPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="secondary" >\n\n    <ion-title>SignUp</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="sign-up">\n\n  <button  ion-button color="facebook" block class="margin-bottom">Sign up via Facebook</button>\n\n  <button  ion-button color="googleplus" block class="margin-top">Sign up Google+</button>\n\n\n\n  <div text-center class="margin-top-20 secondary">OR SIGN UP USING EMAIL</div>\n\n\n\n  <ion-list class="list-form">\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Name"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Email or username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button  ion-button color="secondary"  block (click)="signUp()">SIGN UP</button>\n\n\n\n  <div text-center class="margin-top-20 secondary" (click)="forgotPwd()">Forgot password?</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\sign-up\sign-up.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], SignUpPage);
     return SignUpPage;
 }());
@@ -568,7 +621,7 @@ var SignUpPage = (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -576,13 +629,13 @@ var SignUpPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__select_location_select_location__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__select_location_select_location__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__places_places__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__place_detail_place_detail__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__search_search__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__bookmarks_bookmarks__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__bookmarks_bookmarks__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__map_map__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__nearby_nearby__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__nearby_nearby__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ionic_angular_components_alert_alert_controller__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_http__ = __webpack_require__(110);
@@ -680,7 +733,7 @@ var HomePage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\home\home.html"*/'<!--\n\n  Generated template for the HomePage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary"  hideBackButton="true">\n\n    <button  ion-button class="nav-button" (click)="selectLocation()">\n\n      {{ currentLocation }}\n\n      <ion-icon name="ios-arrow-down" class="text-md"></ion-icon>\n\n    </button>\n\n    <ion-buttons end>\n\n      <button  ion-button (click)="goToBookmarks()">\n\n        <ion-icon name="bookmark"></ion-icon>\n\n      </button>\n\n      <button  ion-button (click)="goToSearch()">\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg">\n\n\n\n  \n\n  <ion-list class="list-no-border">\n\n    <h1>Order For Delivery Now</h1>\n\n\n\n    <!-- <div scroll="false">\n\n      <div class="div1">\n\n        <h2>Div 1</h2>\n\n      </div>\n\n      <div class="div2">\n\n        <h2>Div 2</h2>\n\n      </div>\n\n    </div> -->\n\n\n\n    <ion-card *ngFor="let item of restaurants">\n\n      <div scroll="false" class="container" (click)="open_r(item)">\n\n        <div class="fill div1">\n\n          <!-- <img src={{item.wide_image}}> -->\n\n\n\n          <img src="https://www.desi-compile.com/wp-content/uploads/2016/11/indianchat2.jpg">\n\n        </div>\n\n        <p id="only" class="div2">\n\n          Deals\n\n        </p>\n\n        <p id="only" class="div3">\n\n          45 min\n\n        </p>\n\n        <div style="height:120px;width:100%;"></div>\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="{{item.logo_url}}">\n\n          </ion-avatar>\n\n          <h2>{{item.title}}</h2>\n\n          <p>{{item.timing}}</p>\n\n        </ion-item>\n\n  \n\n        <ion-card-content>\n\n          <p>{{item.cuisines}}</p>\n\n        </ion-card-content>\n\n        \n\n        <!-- <ion-row>\n\n          <ion-col>\n\n            <button ion-button icon-left clear small>\n\n              <ion-icon name="thumbs-up"></ion-icon>\n\n              <div>12 Likes</div>\n\n            </button>\n\n          </ion-col>\n\n          <ion-col>\n\n            <button ion-button icon-left clear small>\n\n              <ion-icon name="text"></ion-icon>\n\n              <div>4 Comments</div>\n\n            </button>\n\n          </ion-col>\n\n        </ion-row> -->\n\n      </div>\n\n  \n\n    </ion-card>\n\n  </ion-list>\n\n\n\n  <!-- Slider\n\n  <ion-slides pager class="pager-inner">\n\n\n\n    <ion-slide *ngFor="let slide of slides">\n\n      <img src="{{ slide.src }}" alt="">\n\n    </ion-slide>\n\n\n\n  </ion-slides>\n\n\n\n  <div padding>\n\n    <ion-item padding color="light"  class="no-border" (click)="goToNearBy()">\n\n      <ion-icon name="pin"></ion-icon>\n\n      Nearby\n\n      <ion-icon name="arrow-forward" color="secondary"  class="pull-right"></ion-icon>\n\n    </ion-item>\n\n\n\n    <div text-center margin-top margin-bottom class="secondary">\n\n      Here are 6 ways to think about your next meal\n\n    </div>\n\n\n\n    <ion-grid class="grid-no-padding">\n\n\n\n      <ion-row>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Breakfast</ion-item>\n\n        </ion-col>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Delivery</ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Lunch</ion-item>\n\n        </ion-col>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Dinner</ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Take out</ion-item>\n\n        </ion-col>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">See All</ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n    <ion-item class="margin-top no-border light-bg" (click)="goToNearBy()">\n\n      <ion-icon name="pin"></ion-icon>\n\n      All places in {{ currentLocation }}\n\n      <ion-icon name="arrow-forward" color="secondary"  class="pull-right"></ion-icon>\n\n    </ion-item>\n\n\n\n  </div>\n\n\n\n  <div text-center class="secondary margin-top margin-bottom">\n\n    Popular nearby\n\n  </div>\n\n\n\n  <div class="light-bg card" margin-bottom>\n\n    <ion-grid>\n\n      <ion-row wrap>\n\n        <ion-col class="rlt" col-4 *ngFor="let place of popularPlaces" (click)="viewPlace(place.id)">\n\n          <img class="round" src="{{ place.photos[0].thumb }}" alt="">\n\n          <div class="item-rating">{{ place.rating }}</div>\n\n          <div class="text-md strong">{{ place.name }}</div>\n\n          <div class="text-sm secondary">{{ place.district }}</div>\n\n          <div class="text-sm secondary">{{ place.cuisines }}</div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <div class="block-footer" padding text-right (click)="viewPlaces()">\n\n      <span ion-text color="primary" >See more ></span>\n\n    </div>\n\n  </div> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_10__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_11_ionic_angular_components_alert_alert_controller__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_10__angular_http__["d" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_http__["a" /* HTTP */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_10__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_11_ionic_angular_components_alert_alert_controller__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_10__angular_http__["d" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_http__["a" /* HTTP */]])
     ], HomePage);
     return HomePage;
 }());
@@ -689,7 +742,7 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -727,7 +780,7 @@ var SelectLocationPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-select-location',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\select-location\select-location.html"*/'<!--\n\n  Generated template for the SelectLocationPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Select Location</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div padding class="common-bg">\n\n    Auto-detect current location\n\n    <ion-icon class="pull-right" ios="ios-locate-outline" md="md-locate"></ion-icon>\n\n  </div>\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Start typing your locations..."></ion-input>\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    RECENT SEARCHES\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\select-location\select-location.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], SelectLocationPage);
     return SelectLocationPage;
 }());
@@ -736,7 +789,7 @@ var SelectLocationPage = (function () {
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -825,7 +878,7 @@ var FiltersPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-filters',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\filters\filters.html"*/'<!--\n\n  Generated template for the FiltersPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-toolbar color="primary" >\n\n  <ion-title>\n\n    Filters\n\n  </ion-title>\n\n  <ion-buttons start>\n\n    <button  ion-button (click)="dismiss()">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-buttons>\n\n  <ion-buttons end>\n\n    <button  ion-button (click)="dismiss()">\n\n      Apply\n\n    </button>\n\n  </ion-buttons>\n\n</ion-toolbar>\n\n\n\n<ion-content class=" common-bg">\n\n  <div text-center margin-top margin-bottom class="secondary">SORT BY</div>\n\n  <ion-grid class="light-bg">\n\n    <ion-row text-center>\n\n      <ion-col col-3 *ngFor="let sort of sorts" [class]="sort.active" (click)="chooseSort(sort)">\n\n        <ion-icon name="{{ sort.icon }}" class="text-lg"></ion-icon>\n\n        <ion-icon name="ios-arrow-round-up" class="text-lg" [hidden]="!sort.sortDirection || !sort.sortAsc"></ion-icon>\n\n        <ion-icon name="ios-arrow-round-down" class="text-lg" [hidden]="!sort.sortDirection || sort.sortAsc"></ion-icon>\n\n        <div>{{ sort.name }}</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n  <div text-center margin-top margin-bottom class="secondary">QUICK FILTERS</div>\n\n  <ion-grid class="light-bg">\n\n    <ion-row text-center>\n\n      <ion-col>\n\n        <ion-checkbox color="secondary"  checked="true"></ion-checkbox>\n\n        <div>Open now</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n        <div>Rate 3.5+</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n        <div>Bookmarked</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n\n\n  <div text-center margin-top margin-bottom class="secondary">COST</div>\n\n  <ion-grid class="light-bg">\n\n    <ion-row text-center>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>0-10</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>10-20</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>20-30</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>30+</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n  <div text-center margin-top margin-bottom class="secondary">MORE FIlTERS</div>\n\n  <ion-list padding-bottom class="text-light">\n\n\n\n    <ion-item>\n\n      <ion-label>Online booking</ion-label>\n\n      <ion-checkbox color="secondary"  checked="true"></ion-checkbox>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label>Creadit cards</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Happy hours</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Wifi</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Alcohol served</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Sport bars</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Live music</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\filters\filters.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]])
     ], FiltersPage);
     return FiltersPage;
 }());
@@ -834,7 +887,7 @@ var FiltersPage = (function () {
 
 /***/ }),
 
-/***/ 209:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -875,7 +928,7 @@ var MenuPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-menu',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\menu\menu.html"*/'<!--\n\n  Generated template for the MenuPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <ion-item-group *ngFor="let category of place.menu">\n\n\n\n    <ion-item-divider bgColor class="strong uppercase">{{ category.name }}</ion-item-divider>\n\n    <ion-item *ngFor="let item of category.items" (click)="add(item)">\n\n      <span>{{ item.name }}</span>\n\n      <span class="badge" *ngIf="item.qty != 0">\n\n        <ion-badge item-end>{{item.qty}}</ion-badge>\n\n      </span>\n\n      <span class="pull-right">{{ item.price | currency:\'USD\':true }}</span>\n\n      <button ion-button color="primary" class="pull-down custom">Customize</button>        \n\n    </ion-item>\n\n  </ion-item-group>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\menu\menu.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
     ], MenuPage);
     return MenuPage;
 }());
@@ -884,7 +937,7 @@ var MenuPage = (function () {
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -921,7 +974,7 @@ var PhotosPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-photos',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\photos\photos.html"*/'<!--\n\n  Generated template for the PhotosPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Photos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row wrap>\n\n      <ion-col class="rlt" col-4 *ngFor="let photo of place.photos" (click)="viewPlace(place.id)">\n\n        <img class="round" src="{{ photo.thumb }}" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\photos\photos.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
     ], PhotosPage);
     return PhotosPage;
 }());
@@ -930,7 +983,7 @@ var PhotosPage = (function () {
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -967,7 +1020,7 @@ var ReviewsPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-reviews',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\reviews\reviews.html"*/'<!--\n\n  Generated template for the ReviewsPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Reviews</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" feed common-bg">\n\n  <ion-list class="list-no-border">\n\n\n\n    <ion-item *ngFor="let review of reviews" text-wrap class="margin-bottom">\n\n      <div>\n\n        <div class="item-header">\n\n          <img src="{{ review.author.profile_picture}}" class="pull-left item-avatar profile-picture" alt="">\n\n          <div class="pull-left">\n\n            <h3>{{ review.author.username }}</h3>\n\n            <div class="secondary uppercase text-sm">{{ review.author.num_reviews }} Reviews, {{\n\n              review.author.num_folowers }} Follower\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left secondary text-sm">{{ review.time }}</div>\n\n        <div class="pull-right secondary text-sm">\n\n          RATED\n\n          <span class="rating">\n\n            {{ review.rating }}\n\n          </span>\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div class="text-sm" margin-top>\n\n        {{ review.text }}\n\n      </div>\n\n\n\n      <div class="post-images">\n\n        <img *ngFor="let photo of review.photos" src="{{ photo.thumb }}">\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left action-buttons">\n\n          <ion-icon name="md-heart-outline" color="danger"  [hidden]="!review.liked"></ion-icon>\n\n          <ion-icon name="md-heart-outline" color="secondary"  [hidden]="review.liked"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="danger"  [hidden]="!review.commented"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="secondary"  [hidden]="review.commented"></ion-icon>\n\n          <ion-icon name="md-share" color="secondary" ></ion-icon>\n\n        </div>\n\n\n\n        <div class="pull-right uppercase secondary text-sm">\n\n          {{ review.num_likes }} likes &bull;\n\n          {{ review.num_comments }} comments\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\reviews\reviews.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]])
     ], ReviewsPage);
     return ReviewsPage;
 }());
@@ -976,7 +1029,7 @@ var ReviewsPage = (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1018,7 +1071,7 @@ var BookmarksPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-bookmarks',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\bookmarks\bookmarks.html"*/'<!--\n\n  Generated template for the BookmarksPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Bookmarks</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="bookmarks">\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Type to filter by location"></ion-input>\n\n  </div>\n\n\n\n  <!-- list of places -->\n\n  <ion-list class="list-full-border">\n\n    <ion-item *ngFor="let place of places">\n\n      <ion-avatar item-left>\n\n        <img src="{{ place.photos[0].thumb }}">\n\n      </ion-avatar>\n\n\n\n      <div>\n\n        <div>{{ place.name }}</div>\n\n        <div class="secondary uppercase text-sm">{{ place.district }}, {{ place.city }}</div>\n\n      </div>\n\n\n\n      <ion-icon name="call" color="favorite"  item-right></ion-icon>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\bookmarks\bookmarks.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
     ], BookmarksPage);
     return BookmarksPage;
 }());
@@ -1027,7 +1080,7 @@ var BookmarksPage = (function () {
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1072,7 +1125,7 @@ var NearbyPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-nearby',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\nearby\nearby.html"*/'<!--\n\n  Generated template for the NearbyPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n	<ion-navbar color="primary" >\n\n	  <ion-title>Nearby</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\nearby\nearby.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]])
     ], NearbyPage);
     return NearbyPage;
 }());
@@ -1081,14 +1134,14 @@ var NearbyPage = (function () {
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_collection_service__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_collection_service__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__places_places__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1129,7 +1182,7 @@ var CollectionsPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-collections',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\collections\collections.html"*/'<!--\n\n  Generated template for the CollectionsPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Collections</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="collections">\n\n  <ion-list>\n\n    <ion-item class="margin-top" *ngFor="let collection of collections"\n\n              [ngStyle]="{\'background-image\': \'url(\' + collection.background + \')\'}">\n\n      <div class="item-info">\n\n        <ion-icon class="bookmark-icon" name="bookmark" color="primary"  [hidden]="!collection.bookmarked"\n\n                  (click)="addBookMark(collection)"></ion-icon>\n\n        <ion-icon class="bookmark-icon" name="bookmark-outline" color="light"  [hidden]="collection.bookmarked"\n\n                  (click)="addBookMark(collection)"></ion-icon>\n\n        <div class="text-sm light" (click)="goToCollection(collection.id)">{{ collection.num_places }} PLACE &bull; {{\n\n          collection.num_bookmarks }} BOOKMARKS\n\n        </div>\n\n        <h3 class="light" (click)="goToCollection(collection.id)">{{ collection.name }}</h3>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\collections\collections.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_collection_service__["a" /* CollectionService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_collection_service__["a" /* CollectionService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */]])
     ], CollectionsPage);
     return CollectionsPage;
 }());
@@ -1138,13 +1191,13 @@ var CollectionsPage = (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mock_collections__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mock_collections__ = __webpack_require__(298);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1185,7 +1238,7 @@ var CollectionService = (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1232,7 +1285,7 @@ var FeedPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-feed',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\feed\feed.html"*/'<!--\n\n  Generated template for the FeedPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Feed</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg">\n\n\n\n  <div class="button-set set-2">\n\n    <button ion-button color="primary">\n\n      Local Feed\n\n    </button>\n\n    <button ion-button color="light">\n\n      My Feed\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list class="list-no-border">\n\n\n\n    <ion-card *ngFor="let item of posts">\n\n      <div>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{item.restaurant.image}}">\n\n        </ion-avatar>\n\n        <h2>{{item.restaurant.name}}</h2>\n\n        <p>November 5, 2018</p>\n\n      </ion-item>\n\n\n\n      <ion-card-content>\n\n        <p>{{item.text}}</p>\n\n      </ion-card-content>\n\n\n\n      <img src="{{item.image}}">\n\n\n\n      <ion-row>\n\n        <ion-col>\n\n          <button ion-button icon-left clear small>\n\n            <ion-icon name="thumbs-up"></ion-icon>\n\n            <div>12 Likes</div>\n\n          </button>\n\n        </ion-col>\n\n        <ion-col>\n\n          <button ion-button icon-left clear small>\n\n            <ion-icon name="text"></ion-icon>\n\n            <div>4 Comments</div>\n\n          </button>\n\n        </ion-col>\n\n        <ion-col center text-center>\n\n          <ion-note>\n\n            11h ago\n\n          </ion-note>\n\n        </ion-col>\n\n      </ion-row>\n\n      </div>\n\n\n\n    </ion-card>\n\n    <!-- \n\n    <ion-item *ngFor="let review of reviews" text-wrap class="margin-bottom">\n\n      <div class="item-header border-bottom" (click)="viewPlace(review.place.id)">\n\n        <img src="{{ review.place.photo}}" class="pull-left item-avatar" alt="">\n\n        <div class="pull-left">\n\n          <h3>{{ review.place.name }}</h3>\n\n          <div class="secondary uppercase text-sm">{{ review.place.district }}, {{ review.place.city }}</div>\n\n        </div>\n\n        <div class="clear"></div>\n\n      </div>\n\n      <div>\n\n        <div class="item-header">\n\n          <img src="{{ review.author.profile_picture}}" class="pull-left item-avatar profile-picture" alt="">\n\n          <div class="pull-left">\n\n            <h3>{{ review.author.username }}</h3>\n\n            <div class="secondary uppercase text-sm">{{ review.author.num_reviews }} Reviews, {{\n\n              review.author.num_folowers }} Follower\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left secondary text-sm">{{ review.time }}</div>\n\n        <div class="pull-right secondary text-sm">\n\n          RATED\n\n          <span class="rating">\n\n            {{ review.rating }}\n\n          </span>\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div class="text-sm" margin-top>\n\n        {{ review.text }}\n\n      </div>\n\n\n\n      <div class="post-images">\n\n        <img *ngFor="let photo of review.photos" src="{{ photo.thumb }}">\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left action-buttons">\n\n          <ion-icon name="md-heart-outline" color="danger"  [hidden]="!review.liked"></ion-icon>\n\n          <ion-icon name="md-heart-outline" color="secondary"  [hidden]="review.liked"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="danger"  [hidden]="!review.commented"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="secondary"  [hidden]="review.commented"></ion-icon>\n\n          <ion-icon name="md-share" color="secondary" ></ion-icon>\n\n        </div>\n\n\n\n        <div class="pull-right uppercase secondary text-sm">\n\n          {{ review.num_likes }} likes &bull;\n\n          {{ review.num_comments }} comments\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n    </ion-item> -->\n\n\n\n\n\n\n\n\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\feed\feed.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]])
     ], FeedPage);
     return FeedPage;
 }());
@@ -1241,7 +1294,7 @@ var FeedPage = (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1273,7 +1326,7 @@ var AccountPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-account',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\account\account.html"*/'<!--\n\n  Generated template for the AccountPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Account</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button>\n\n        <ion-icon name="notifications"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <!-- username-->\n\n  <ion-item class="no-border">\n\n    <ion-avatar item-left>\n\n      <img src="assets/img/user/mike.png" alt="">\n\n    </ion-avatar>\n\n    <span class="strong">Hassan Ali</span>\n\n    <ion-icon name="ios-arrow-forward" item-right></ion-icon>\n\n  </ion-item>\n\n\n\n  <!-- Profile -->\n\n  <ion-item-group>\n\n\n\n    <ion-item-divider bgColor>PROFILE</ion-item-divider>\n\n    <ion-item>\n\n      <ion-icon name="md-create"></ion-icon>\n\n      Edit profile\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="md-share"></ion-icon>\n\n      Connected accounts\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="timer"></ion-icon>\n\n      Recent viewed\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="pricetags"></ion-icon>\n\n      Saved Offers\n\n    </ion-item>\n\n\n\n  </ion-item-group>\n\n\n\n  <!-- Other -->\n\n  <ion-item-group>\n\n    <ion-item-divider bgColor>OTHERS</ion-item-divider>\n\n    <ion-item>\n\n      <ion-icon name="podium"></ion-icon>\n\n      Leaderboard\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="person-add"></ion-icon>\n\n      Find foodies\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="home"></ion-icon>\n\n      Suggest a restaurant\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="md-share"></ion-icon>\n\n      Invite friend\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="send"></ion-icon>\n\n      Send feedback\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="ios-information-circle"></ion-icon>\n\n      About\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="star"></ion-icon>\n\n      Rate us\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-icon name="ios-exit"></ion-icon>\n\n      Sign out\n\n    </ion-item>\n\n  </ion-item-group>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\account\account.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], AccountPage);
     return AccountPage;
 }());
@@ -1282,13 +1335,13 @@ var AccountPage = (function () {
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(244);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1296,44 +1349,45 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_place_service__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_collection_service__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_collection_service__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_review_service__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_facebook__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_add_review_add_review__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_bookmarks_bookmarks__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_collections_collections__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_feed_feed__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_filters_filters__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_facebook__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_add_review_add_review__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_bookmarks_bookmarks__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_collections_collections__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_feed_feed__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_filters_filters__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_forgot_password_forgot_password__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_home_home__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_login_login__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_home_home__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_login_login__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_main_tabs_main_tabs__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_menu_menu__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_nearby_nearby__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_photos_photos__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_menu_menu__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_nearby_nearby__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_photos_photos__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_place_detail_place_detail__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_places_places__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_reviews_reviews__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_reviews_reviews__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_search_search__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_select_location_select_location__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_sign_up_sign_up__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_user_user__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_select_location_select_location__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_sign_up_sign_up__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_user_user__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_http__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_cartview_cartview__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1353,6 +1407,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // end import services
 // import pages
+
 
 
 
@@ -1405,6 +1460,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_28__pages_select_location_select_location__["a" /* SelectLocationPage */],
                 __WEBPACK_IMPORTED_MODULE_29__pages_sign_up_sign_up__["a" /* SignUpPage */],
                 __WEBPACK_IMPORTED_MODULE_30__pages_user_user__["a" /* UserPage */],
+                __WEBPACK_IMPORTED_MODULE_33__pages_cartview_cartview__["a" /* CartviewPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_31__angular_http__["c" /* HttpModule */],
@@ -1421,7 +1477,9 @@ var AppModule = (function () {
                         }
                     }
                 }, {
-                    links: []
+                    links: [
+                        { loadChildren: '../pages/cartview/cartview.module#CartviewPageModule', name: 'CartviewPage', segment: 'cartview', priority: 'low', defaultHistory: [] }
+                    ]
                 })
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* IonicApp */]],
@@ -1447,6 +1505,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_27__pages_search_search__["a" /* SearchPage */],
                 __WEBPACK_IMPORTED_MODULE_28__pages_select_location_select_location__["a" /* SelectLocationPage */],
                 __WEBPACK_IMPORTED_MODULE_29__pages_sign_up_sign_up__["a" /* SignUpPage */],
+                __WEBPACK_IMPORTED_MODULE_33__pages_cartview_cartview__["a" /* CartviewPage */],
                 __WEBPACK_IMPORTED_MODULE_30__pages_user_user__["a" /* UserPage */],
             ],
             providers: [
@@ -1479,16 +1538,16 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 286:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_navigation_nav_controller__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1530,7 +1589,7 @@ var MyApp = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             template: '<ion-nav #myNav [root]="rootPage"></ion-nav>'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -1539,7 +1598,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 295:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2019,7 +2078,7 @@ var PLACES = [
 
 /***/ }),
 
-/***/ 296:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2120,7 +2179,7 @@ var REVIEWS = [
 
 /***/ }),
 
-/***/ 297:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2166,7 +2225,7 @@ var COLLECTIONS = [
 
 /***/ }),
 
-/***/ 298:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2198,53 +2257,12 @@ var AddReviewPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-add-review',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\add-review\add-review.html"*/'<!--\n\n  Generated template for the AddReviewPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n	<ion-navbar>\n\n	  <ion-title>AddReview</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="add-review">\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\add-review\add-review.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], AddReviewPage);
     return AddReviewPage;
 }());
 
 //# sourceMappingURL=add-review.js.map
-
-/***/ }),
-
-/***/ 299:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/*
- Generated class for the LoginPage page.
-
- See http://ionicframework.com/docs/v2/components/#navigation for more info on
- Ionic pages and navigation.
- */
-var UserPage = (function () {
-    function UserPage(nav) {
-        this.nav = nav;
-    }
-    UserPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-user',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\user\user.html"*/'<!--\n\n  Generated template for the UserPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n	<ion-navbar>\n\n	  <ion-title>User</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="user">\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\user\user.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
-    ], UserPage);
-    return UserPage;
-}());
-
-//# sourceMappingURL=user.js.map
 
 /***/ }),
 
@@ -2254,7 +2272,7 @@ var UserPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaceService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mock_places__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mock_places__ = __webpack_require__(296);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2295,20 +2313,13 @@ var PlaceService = (function () {
 
 /***/ }),
 
-/***/ 41:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaceDetailPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__photos_photos__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reviews_reviews__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular_navigation_nav_params__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2318,6 +2329,56 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+/*
+ Generated class for the LoginPage page.
+
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
+var UserPage = (function () {
+    function UserPage(nav) {
+        this.nav = nav;
+    }
+    UserPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-user',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\user\user.html"*/'<!--\n\n  Generated template for the UserPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n	<ion-navbar>\n\n	  <ion-title>User</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="user">\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\user\user.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+    ], UserPage);
+    return UserPage;
+}());
+
+//# sourceMappingURL=user.js.map
+
+/***/ }),
+
+/***/ 41:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaceDetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__photos_photos__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reviews_reviews__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular_navigation_nav_params__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cartview_cartview__ = __webpack_require__(111);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 
@@ -2356,9 +2417,11 @@ var PlaceDetailPage = (function () {
             _this.objectKeys(_this.categorized).forEach(function (categories) {
                 var keys = _this.objectKeys(_this.categorized[categories]);
                 keys.forEach(function (key) {
-                    if (items.find(function (x) { return x.id == key; }) != null)
+                    var temp = items.find(function (x) { return x.id == key; });
+                    if (temp != null)
                         _this.categorized[categories][key].item.forEach(function (food) {
-                            console.log(food);
+                            if (food.variation_name == temp.variation_name)
+                                food.qty = temp.qty;
                         });
                 });
             });
@@ -2476,11 +2539,14 @@ var PlaceDetailPage = (function () {
     PlaceDetailPage.prototype.goToReviews = function () {
         this.nav.push(__WEBPACK_IMPORTED_MODULE_6__reviews_reviews__["a" /* ReviewsPage */]);
     };
+    PlaceDetailPage.prototype.viewcart = function () {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_9__cartview_cartview__["a" /* CartviewPage */]);
+    };
     PlaceDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-place-detail',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\place-detail\place-detail.html"*/'<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Place Detail</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button>\n\n        <ion-icon name="md-share"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg rlt">\n\n\n\n  <!-- content top -->\n\n  <div class="bg-image" [ngStyle]="{\'background-image\': \'url(\' + place.photos[0].full_size + \')\'}">\n\n\n\n    <div class="bg-overlay" padding>\n\n      <div>\n\n        <div class="pull-left">\n\n          <h3>{{ place.name}}</h3>\n\n          <span>{{ place.district }}, {{ place.city }}</span>\n\n        </div>\n\n\n\n        <div class="pull-right" text-right>\n\n          <div class="rating">{{ place.rating }}</div>\n\n          <div>{{ place.num_votes }} votes</div>\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div margin-top>\n\n        <ion-badge color="favorite"  [hidden]="!workingHour.available">OPEN NOW</ion-badge>\n\n        <ion-badge color="primary"  [hidden]="workingHour.available">CLOSE NOW</ion-badge>\n\n        {{ workingHour.from }}h to {{ workingHour.to }}h\n\n        <div>\n\n          {{ place.num_reviews }} Reviews &bull;\n\n          {{ place.num_photos }} Photos\n\n        </div>\n\n      </div>\n\n\n\n      <div class="line" margin-top margin-bottom></div>\n\n      <div margin-bottom>\n\n        <a href="tel:{{ place.phone }}" class="btn-round">\n\n          <ion-icon name="call" color="favorite" ></ion-icon>\n\n        </a>\n\n        <div class="btn-round" (click)="addBookMark(place)">\n\n          <ion-icon name="bookmark" color="primary"  [hidden]="!place.bookmarked"></ion-icon>\n\n          <ion-icon name="bookmark" [hidden]="place.bookmarked"></ion-icon>\n\n        </div>\n\n        <div class="btn-round" (click)="goToMap()">\n\n          <ion-icon name="pin"></ion-icon>\n\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n\n\n  <!--address-->\n\n  <div padding class="light-bg">\n\n    <div class="strong">Address</div>\n\n    <span>{{ place.address }}</span>\n\n\n\n    <p>\n\n      <a href="{{ place.website }}" ion-text color="primary" >\n\n        Website\n\n        <ion-icon ios="ios-exit" md="md-exit"></ion-icon>\n\n      </a>\n\n    </p>\n\n  </div>\n\n  <div class="block-footer" padding text-right (click)="goToMap()">\n\n    <span ion-text color="primary" >Map & Directions</span>\n\n    <ion-icon color="primary"  name="arrow-forward"></ion-icon>\n\n  </div>\n\n\n\n  <ion-list class="accordion-list">\n\n    <!-- First Level -->\n\n    <ion-list-header *ngFor="let item of objectKeys(categorized);" no-lines no-padding>\n\n      <!-- Toggle Button -->\n\n      <button ion-item (click)="toggleSection(item)" detail-none [ngClass]="{\'section-active\': categorized[item].open, \'section\': !categorized[item].open}">\n\n        <ion-icon item-left name="arrow-forward" *ngIf="!categorized[item].open"></ion-icon>\n\n        <ion-icon item-left name="arrow-down" *ngIf="categorized[item].open"></ion-icon>\n\n        {{ item }}\n\n      </button>\n\n\n\n      <div *ngFor="let product of objectKeys(categorized[item])">\n\n        <div *ngIf="product != \'open\'">\n\n        <ion-list *ngIf="categorized[item].open" no-lines>\n\n          <!-- Second Level -->\n\n          <ion-list-header  no-padding>\n\n            <!-- Toggle Button -->\n\n            <div class="child" ion-item (click)="toggleItem(categorized[item][product])" detail-none>\n\n              <ion-icon item-left name="add"  *ngIf="!categorized[item][product].open"></ion-icon>\n\n              <ion-icon item-left name="close" *ngIf="categorized[item][product].open"></ion-icon>\n\n              {{ categorized[item][product].item[0].name }}\n\n            <p text-wrap text-lowercase >{{ categorized[item][product].item[0].description }}</p>\n\n            </div>\n\n\n\n            <ion-list *ngIf="categorized[item][product].open">\n\n              <!-- Third Level  -->\n\n              <ion-item *ngFor="let final of categorized[item][product].item;" detail-none class="child-item" text-wrap (click)="add_to_cart(final)">\n\n                <h2>{{ final.variation_name }}</h2>\n\n                <!-- <p text-lowercase>{{ final.description }}</p> -->\n\n                <button ion-button outline item-end >Qty {{ final.qty }}</button>                \n\n                <button ion-button outline item-end >Rs.{{ final.variation_price }}</button>\n\n\n\n              </ion-item>\n\n            </ion-list>\n\n    \n\n          </ion-list-header>\n\n        </ion-list>\n\n        </div>        \n\n    </div>\n\n    </ion-list-header>\n\n  </ion-list>\n\n\n\n  <!-- <ion-item-group *ngFor="let category of objectKeys(categorized)">\n\n    <ion-item-divider bgColor class="strong uppercase" style="text-align:center;">{{ category }}</ion-item-divider>\n\n    <ion-item *ngFor="let item of objectKeys(categorized[category])" (click)="add(categorized[category][item].item[0])">\n\n      <span>{{ categorized[category][item].item[0].name }}</span>\n\n       <span class="badge" *ngIf="categorized[category][item].item[0].qty != 0">\n\n        <ion-badge item-end>{{categorized[category][item].item[0].qty}}</ion-badge>\n\n      </span>\n\n      <span class="pull-right">Rs.{{categorized[category][item].item[0].variation_price}}</span>\n\n      <button ion-button color="primary" class="pull-down custom" (click)="customize(item,$event)">Customize</button>\n\n      \n\n    </ion-item>\n\n    \n\n  </ion-item-group> -->\n\n\n\n  <!-- photos -->\n\n  <div padding class="light-bg margin-top-20">\n\n    <div class="strong">Photos</div>\n\n\n\n    <ion-grid class="grid-no-padding">\n\n      <ion-row>\n\n        <ion-col width-25 *ngFor="let photo of limitArray(place.photos, 4)">\n\n          <img class="round" src="{{ photo.thumb }}" alt="">\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <button  ion-button color="favorite"  block>\n\n      Add photo\n\n    </button>\n\n  </div>\n\n  <div class="block-footer" padding text-right (click)="goToPhotos()">\n\n    <span ion-text color="primary" >See All Photos</span>\n\n    <ion-icon color="primary"  name="arrow-forward"></ion-icon>\n\n  </div>\n\n\n\n  <!-- Reviews -->\n\n  <div padding class="light-bg margin-top-20">\n\n    <div class="strong">Reviews</div>\n\n    <div margin-top class="secondary">RECENT REVIEWS</div>\n\n    <ion-list class="list-no-border">\n\n      <ion-item *ngFor="let review of place.reviews" text-wrap>\n\n        <ion-avatar item-left>\n\n          <img src="{{ review.profile_picture }}" alt="">\n\n        </ion-avatar>\n\n        <div class="strong">{{ review.username }}</div>\n\n        <div class="text-sm">\n\n          <span class="strong">RATED</span>\n\n          <span class="rating">{{ review.rating }}</span>\n\n          {{ review.comment }}\n\n        </div>\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div class="block-footer" padding text-right (click)="goToReviews()">\n\n    <span ion-text color="primary" >Read All Review({{ place.num_reviews }})</span>\n\n    <ion-icon color="primary"  name="arrow-forward"></ion-icon>\n\n  </div>\n\n\n\n  <!-- Other info -->\n\n  <div padding class="light-bg margin-top-20">\n\n    <span class="strong">Hours</span>\n\n    <ion-badge color="favorite"  [hidden]="!workingHour.available">OPEN NOW</ion-badge>\n\n    <ion-badge color="primary"  [hidden]="workingHour.available">CLOSE NOW</ion-badge>\n\n    <div class="strong">\n\n      {{ workingHour.from }}h to {{ workingHour.to }}h\n\n    </div>\n\n    <span ion-text color="primary" >View All Days</span>\n\n\n\n    <div class="strong" margin-top>Cuisines</div>\n\n    <div>{{ place.cuisines }}</div>\n\n\n\n    <div class="strong" margin-top>Cost</div>\n\n    <div>{{ place.cost | currency:\'USD\':true }}</div>\n\n\n\n    <div>\n\n      <ion-icon name="card"></ion-icon>\n\n      <span *ngIf="place.accepted_card && place.accepted_cash">Cash & card accepted</span>\n\n      <span *ngIf="place.accepted_card && !place.placeaccepted_cash">Card accepted</span>\n\n      <span *ngIf="!place.accepted_card && place.accepted_cash">Cash accepted</span>\n\n    </div>\n\n\n\n    <div class="strong" margin-top>Highlights</div>\n\n    <div *ngFor="let item of place.highlights">\n\n      <ion-icon name="checkmark-circle" color="favorite" ></ion-icon>\n\n      {{ item }}\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-navbar color="primary" >\n\n        <ion-title>View Cart</ion-title>\n\n        <ion-buttons end>\n\n            <button ion-button outline item-end style="color:white;">Rs.1500</button>            \n\n          </ion-buttons>\n\n      </ion-navbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\place-detail\place-detail.html"*/
+            selector: 'page-place-detail',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\place-detail\place-detail.html"*/'<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Place Detail</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button>\n\n        <ion-icon name="md-share"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg rlt">\n\n\n\n  <!-- content top -->\n\n  <div class="bg-image" [ngStyle]="{\'background-image\': \'url(\' + place.photos[0].full_size + \')\'}">\n\n\n\n    <div class="bg-overlay" padding>\n\n      <div>\n\n        <div class="pull-left">\n\n          <h3>{{ place.name}}</h3>\n\n          <span>{{ place.district }}, {{ place.city }}</span>\n\n        </div>\n\n\n\n        <div class="pull-right" text-right>\n\n          <div class="rating">{{ place.rating }}</div>\n\n          <div>{{ place.num_votes }} votes</div>\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div margin-top>\n\n        <ion-badge color="favorite"  [hidden]="!workingHour.available">OPEN NOW</ion-badge>\n\n        <ion-badge color="primary"  [hidden]="workingHour.available">CLOSE NOW</ion-badge>\n\n        {{ workingHour.from }}h to {{ workingHour.to }}h\n\n        <div>\n\n          {{ place.num_reviews }} Reviews &bull;\n\n          {{ place.num_photos }} Photos\n\n        </div>\n\n      </div>\n\n\n\n      <div class="line" margin-top margin-bottom></div>\n\n      <div margin-bottom>\n\n        <a href="tel:{{ place.phone }}" class="btn-round">\n\n          <ion-icon name="call" color="favorite" ></ion-icon>\n\n        </a>\n\n        <div class="btn-round" (click)="addBookMark(place)">\n\n          <ion-icon name="bookmark" color="primary"  [hidden]="!place.bookmarked"></ion-icon>\n\n          <ion-icon name="bookmark" [hidden]="place.bookmarked"></ion-icon>\n\n        </div>\n\n        <div class="btn-round" (click)="goToMap()">\n\n          <ion-icon name="pin"></ion-icon>\n\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n\n\n  <!--address-->\n\n  <div padding class="light-bg">\n\n    <div class="strong">Address</div>\n\n    <span>{{ place.address }}</span>\n\n\n\n    <p>\n\n      <a href="{{ place.website }}" ion-text color="primary" >\n\n        Website\n\n        <ion-icon ios="ios-exit" md="md-exit"></ion-icon>\n\n      </a>\n\n    </p>\n\n  </div>\n\n  <div class="block-footer" padding text-right (click)="goToMap()">\n\n    <span ion-text color="primary" >Map & Directions</span>\n\n    <ion-icon color="primary"  name="arrow-forward"></ion-icon>\n\n  </div>\n\n\n\n  <ion-list class="accordion-list">\n\n    <!-- First Level -->\n\n    <ion-list-header *ngFor="let item of objectKeys(categorized);" no-lines no-padding>\n\n      <!-- Toggle Button -->\n\n      <button ion-item (click)="toggleSection(item)" detail-none [ngClass]="{\'section-active\': categorized[item].open, \'section\': !categorized[item].open}">\n\n        <ion-icon item-left name="arrow-forward" *ngIf="!categorized[item].open"></ion-icon>\n\n        <ion-icon item-left name="arrow-down" *ngIf="categorized[item].open"></ion-icon>\n\n        {{ item }}\n\n      </button>\n\n\n\n      <div *ngFor="let product of objectKeys(categorized[item])">\n\n        <div *ngIf="product != \'open\'">\n\n        <ion-list *ngIf="categorized[item].open" no-lines>\n\n          <!-- Second Level -->\n\n          <ion-list-header  no-padding>\n\n            <!-- Toggle Button -->\n\n            <div class="child" ion-item (click)="toggleItem(categorized[item][product])" detail-none>\n\n              <ion-icon item-left name="add"  *ngIf="!categorized[item][product].open"></ion-icon>\n\n              <ion-icon item-left name="close" *ngIf="categorized[item][product].open"></ion-icon>\n\n              {{ categorized[item][product].item[0].name }}\n\n            <p text-wrap text-lowercase >{{ categorized[item][product].item[0].description }}</p>\n\n            </div>\n\n\n\n            <ion-list *ngIf="categorized[item][product].open">\n\n              <!-- Third Level  -->\n\n              <ion-item *ngFor="let final of categorized[item][product].item;" detail-none class="child-item" text-wrap (click)="add_to_cart(final)">\n\n                <h2>{{ final.variation_name }}</h2>\n\n                <!-- <p text-lowercase>{{ final.description }}</p> -->\n\n                <button ion-button outline item-end >Qty {{ final.qty }}</button>                \n\n                <button ion-button outline item-end >Rs.{{ final.variation_price }}</button>\n\n\n\n              </ion-item>\n\n            </ion-list>\n\n    \n\n          </ion-list-header>\n\n        </ion-list>\n\n        </div>        \n\n    </div>\n\n    </ion-list-header>\n\n  </ion-list>\n\n\n\n  <!-- <ion-item-group *ngFor="let category of objectKeys(categorized)">\n\n    <ion-item-divider bgColor class="strong uppercase" style="text-align:center;">{{ category }}</ion-item-divider>\n\n    <ion-item *ngFor="let item of objectKeys(categorized[category])" (click)="add(categorized[category][item].item[0])">\n\n      <span>{{ categorized[category][item].item[0].name }}</span>\n\n       <span class="badge" *ngIf="categorized[category][item].item[0].qty != 0">\n\n        <ion-badge item-end>{{categorized[category][item].item[0].qty}}</ion-badge>\n\n      </span>\n\n      <span class="pull-right">Rs.{{categorized[category][item].item[0].variation_price}}</span>\n\n      <button ion-button color="primary" class="pull-down custom" (click)="customize(item,$event)">Customize</button>\n\n      \n\n    </ion-item>\n\n    \n\n  </ion-item-group> -->\n\n\n\n  <!-- photos -->\n\n  <div padding class="light-bg margin-top-20">\n\n    <div class="strong">Photos</div>\n\n\n\n    <ion-grid class="grid-no-padding">\n\n      <ion-row>\n\n        <ion-col width-25 *ngFor="let photo of limitArray(place.photos, 4)">\n\n          <img class="round" src="{{ photo.thumb }}" alt="">\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <button  ion-button color="favorite"  block>\n\n      Add photo\n\n    </button>\n\n  </div>\n\n  <div class="block-footer" padding text-right (click)="goToPhotos()">\n\n    <span ion-text color="primary" >See All Photos</span>\n\n    <ion-icon color="primary"  name="arrow-forward"></ion-icon>\n\n  </div>\n\n\n\n  <!-- Reviews -->\n\n  <div padding class="light-bg margin-top-20">\n\n    <div class="strong">Reviews</div>\n\n    <div margin-top class="secondary">RECENT REVIEWS</div>\n\n    <ion-list class="list-no-border">\n\n      <ion-item *ngFor="let review of place.reviews" text-wrap>\n\n        <ion-avatar item-left>\n\n          <img src="{{ review.profile_picture }}" alt="">\n\n        </ion-avatar>\n\n        <div class="strong">{{ review.username }}</div>\n\n        <div class="text-sm">\n\n          <span class="strong">RATED</span>\n\n          <span class="rating">{{ review.rating }}</span>\n\n          {{ review.comment }}\n\n        </div>\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div class="block-footer" padding text-right (click)="goToReviews()">\n\n    <span ion-text color="primary" >Read All Review({{ place.num_reviews }})</span>\n\n    <ion-icon color="primary"  name="arrow-forward"></ion-icon>\n\n  </div>\n\n\n\n  <!-- Other info -->\n\n  <div padding class="light-bg margin-top-20">\n\n    <span class="strong">Hours</span>\n\n    <ion-badge color="favorite"  [hidden]="!workingHour.available">OPEN NOW</ion-badge>\n\n    <ion-badge color="primary"  [hidden]="workingHour.available">CLOSE NOW</ion-badge>\n\n    <div class="strong">\n\n      {{ workingHour.from }}h to {{ workingHour.to }}h\n\n    </div>\n\n    <span ion-text color="primary" >View All Days</span>\n\n\n\n    <div class="strong" margin-top>Cuisines</div>\n\n    <div>{{ place.cuisines }}</div>\n\n\n\n    <div class="strong" margin-top>Cost</div>\n\n    <div>{{ place.cost | currency:\'USD\':true }}</div>\n\n\n\n    <div>\n\n      <ion-icon name="card"></ion-icon>\n\n      <span *ngIf="place.accepted_card && place.accepted_cash">Cash & card accepted</span>\n\n      <span *ngIf="place.accepted_card && !place.placeaccepted_cash">Card accepted</span>\n\n      <span *ngIf="!place.accepted_card && place.accepted_cash">Cash accepted</span>\n\n    </div>\n\n\n\n    <div class="strong" margin-top>Highlights</div>\n\n    <div *ngFor="let item of place.highlights">\n\n      <ion-icon name="checkmark-circle" color="favorite" ></ion-icon>\n\n      {{ item }}\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-navbar color="primary" (click)="viewcart()">\n\n        <ion-title>View Cart</ion-title>\n\n        <ion-buttons end>\n\n            <button ion-button outline item-end style="color:white;">Rs.1500</button>            \n\n          </ion-buttons>\n\n      </ion-navbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\place-detail\place-detail.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular_navigation_nav_params__["a" /* NavParams */], __WEBPACK_IMPORTED_MODULE_8__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular_navigation_nav_params__["a" /* NavParams */], __WEBPACK_IMPORTED_MODULE_8__angular_http__["b" /* Http */]])
     ], PlaceDetailPage);
     return PlaceDetailPage;
 }());
@@ -2489,5 +2555,5 @@ var PlaceDetailPage = (function () {
 
 /***/ })
 
-},[219]);
+},[220]);
 //# sourceMappingURL=main.js.map

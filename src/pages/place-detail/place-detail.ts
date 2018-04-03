@@ -7,6 +7,7 @@ import {PhotosPage} from '../photos/photos';
 import {ReviewsPage} from '../reviews/reviews';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { CartviewPage } from '../cartview/cartview';
 
 /*
  Generated class for the LoginPage page.
@@ -183,5 +184,9 @@ export class PlaceDetailPage {
   // go to reviews
   goToReviews() {
     this.nav.push(ReviewsPage);
+  }
+
+  viewcart(){
+    this.nav.push(CartviewPage);
   }
 }

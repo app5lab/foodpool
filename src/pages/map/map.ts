@@ -24,11 +24,21 @@ export class MapPage {
 
   initializeMap() {
     var minZoomLevel = 19;
-
+    var myLatLng = {lat:31.420671, lng:74.182747}
     this.map = new google.maps.Map(document.getElementById('map_canvas'), {
       zoom: minZoomLevel,
-      center: new google.maps.LatLng( 31.420671, 74.182747),
+      center: new google.maps.LatLng( myLatLng.lat,myLatLng.lng),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
+   
   }
+
+  get(){
+    console.log(
+     this.map.getCenter().lat(),
+     this.map.getCenter().lng())
+
+  }
+  
 }

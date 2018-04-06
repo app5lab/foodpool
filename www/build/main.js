@@ -243,19 +243,24 @@ var MapPage = (function () {
     };
     MapPage.prototype.initializeMap = function () {
         var minZoomLevel = 19;
+        var myLatLng = { lat: 31.420671, lng: 74.182747 };
         this.map = new google.maps.Map(document.getElementById('map_canvas'), {
             zoom: minZoomLevel,
-            center: new google.maps.LatLng(31.420671, 74.182747),
+            center: new google.maps.LatLng(myLatLng.lat, myLatLng.lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
     };
+    MapPage.prototype.get = function () {
+        console.log(this.map.getCenter().lat(), this.map.getCenter().lng());
+    };
     MapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-map',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/'<!--\n\n  Generated template for the MapPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Map</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/
+            selector: 'page-map',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/'<!--\n\n  Generated template for the MapPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Map</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas">\n\n  </div>\n\n    <ion-icon name="pin" class="cross"></ion-icon>\n\n    <button ion-button (click) = "get()"> Get LAT LNG</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object])
     ], MapPage);
     return MapPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=map.js.map
@@ -390,7 +395,7 @@ var CartviewPage = (function () {
     };
     CartviewPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cartview',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/'\n\n    <ion-content padding="\'true\'" class="has-header">\n\n        <div>\n\n            <p>\n\n                <strong></strong>\n\n            </p>\n\n        </div>\n\n        <button ng-click="checkout()" class="button button-positive button-block ">Check Out</button>\n\n		\n\n		<div ng-repeat="item in cart"   >\n\n			<div class="list card" >\n\n				<div class="item item-divider"> </div>\n\n				<div class="item item-body">\n\n				\n\n					<form class="list"></form>\n\n					<div>\n\n						<p>\n\n							<strong> &#8377; </strong>\n\n						</p>\n\n					</div>\n\n					<div class="button-bar">\n\n						<button ng-click="removeFromCart(item.cart_item_id)" class="button button-assertive button-block button-small icon ion-android-delete" ></button>\n\n						<button class="button button-stable button-clear button-block button-small icon ion-plus" ng-click="inc(item.cart_item_id)"></button>\n\n						<button class="button button-stable button-clear button-block button-small"></button>\n\n						<button class="button button-stable button-clear button-block  icon ion-minus" ng-click="dec(item.cart_item_id)" ></button>\n\n					</div>\n\n				</div>\n\n			</div>\n\n		</div>\n\n		\n\n		\n\n		\n\n		\n\n    </ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/,
+            selector: 'page-cartview',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/'<ion-header>\n\n	<ion-navbar color="primary">\n\n	  <ion-title>Cart</ion-title>\n\n	</ion-navbar>\n\n  </ion-header>\n\n\n\n\n\n\n\n<ion-content style="margin-top:5%; padding-top:10%">\n\n  <div >\n\n    <ion-list >\n\n      <ion-item>\n\n        <ion-thumbnail item-start>\n\n          <img src="assets/img/bugger.jpg">\n\n        </ion-thumbnail>\n\n        <h2 style="padding-top:10px">Vegan Greek Salad</h2>\n\n        <h6>by : Sanjeeb Kapoor</h6>\n\n        <ion-col id="aaa" center text-center>\n\n            <ion-note>\n\n              Qty.(2)\n\n            </ion-note>\n\n          </ion-col>\n\n           \n\n         \n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-thumbnail item-start>\n\n          <img src="assets/img/bugger.jpg">\n\n        </ion-thumbnail>\n\n        <h2>Oscar</h2>\n\n        <h6>by : Sanjeeb Kapoor</h6>\n\n        <ion-col id="aaa" center text-center>\n\n            <ion-note>\n\n              Qty.(2)\n\n            </ion-note>\n\n          </ion-col>\n\n      </ion-item>\n\n     \n\n     \n\n</ion-list>\n\n</div>\n\n\n\n<ion-item>\n\n    <ion-icon item-start name="basket"></ion-icon>\n\n	<h4>NET20 (20% off)</h4>\n\n\n\n	<button ion-button clear item-end>View</button>\n\n</ion-item>\n\n\n\n  <pre id="texted">  \n\n                          Sub total   Rs:200\n\n                          Delivery    Free\n\n                          Tax         0\n\n                          Coupon      -Rs  40\n\n                          \n\n                          Total    Rs : 650/-\n\n    </pre>\n\n\n\n</ion-content>\n\n\n\n<ion-item>\n\n    <ion-label>Username</ion-label>\n\n    <ion-input type="text"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-footer>\n\n	<ion-toolbar  color="primary">\n\n	  <ion-title  style="color:white;">Proceed to checkout</ion-title>\n\n	</ion-toolbar>\n\n  </ion-footer>'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], CartviewPage);

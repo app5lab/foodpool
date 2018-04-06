@@ -1,34 +1,70 @@
+<ion-header>
+	<ion-navbar color="primary">
+	  <ion-title>Cart</ion-title>
+	</ion-navbar>
+  </ion-header>
 
-    <ion-content padding="'true'" class="has-header">
-        <div>
-            <p>
-                <strong></strong>
-            </p>
-        </div>
-        <button ng-click="checkout()" class="button button-positive button-block ">Check Out</button>
-		
-		<div ng-repeat="item in cart"   >
-			<div class="list card" >
-				<div class="item item-divider"> </div>
-				<div class="item item-body">
-				
-					<form class="list"></form>
-					<div>
-						<p>
-							<strong> &#8377; </strong>
-						</p>
-					</div>
-					<div class="button-bar">
-						<button ng-click="removeFromCart(item.cart_item_id)" class="button button-assertive button-block button-small icon ion-android-delete" ></button>
-						<button class="button button-stable button-clear button-block button-small icon ion-plus" ng-click="inc(item.cart_item_id)"></button>
-						<button class="button button-stable button-clear button-block button-small"></button>
-						<button class="button button-stable button-clear button-block  icon ion-minus" ng-click="dec(item.cart_item_id)" ></button>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		
-		
-    </ion-content>
+
+
+<ion-content style="margin-top:5%; padding-top:10%">
+  <div >
+    <ion-list >
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/bugger.jpg">
+        </ion-thumbnail>
+        <h2 style="padding-top:10px">Vegan Greek Salad</h2>
+        <h6>by : Sanjeeb Kapoor</h6>
+        <ion-col id="aaa" center text-center>
+            <ion-note>
+              Qty.(2)
+            </ion-note>
+          </ion-col>
+           
+         
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/bugger.jpg">
+        </ion-thumbnail>
+        <h2>Oscar</h2>
+        <h6>by : Sanjeeb Kapoor</h6>
+        <ion-col id="aaa" center text-center>
+            <ion-note>
+              Qty.(2)
+            </ion-note>
+          </ion-col>
+      </ion-item>
+     
+     
+</ion-list>
+</div>
+
+<ion-item>
+    <ion-icon item-start name="basket"></ion-icon>
+	<h4>NET20 (20% off)</h4>
+
+	<button ion-button clear item-end>View</button>
+</ion-item>
+
+  <pre id="texted">  
+                          Sub total   Rs:200
+                          Delivery    Free
+                          Tax         0
+                          Coupon      -Rs  40
+                          
+                          Total    Rs : 650/-
+    </pre>
+
+</ion-content>
+
+<ion-item>
+    <ion-label>Username</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-footer>
+	<ion-toolbar  color="primary">
+	  <ion-title  style="color:white;">Proceed to checkout</ion-title>
+	</ion-toolbar>
+  </ion-footer>

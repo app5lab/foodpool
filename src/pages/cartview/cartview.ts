@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
+import { CheckoutPage } from '../checkout/checkout';
 
 /**
  * Generated class for the CartviewPage page.
@@ -13,13 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-cartview',
   templateUrl: 'cartview.html',
 })
-export class CartviewPage {
-
+export class CartviewPage  {
+ items: any[]=[];
+ tot: any=0;
+  nav: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+ 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartviewPage');
+ this.items=JSON.parse(localStorage.getItem('cart'));
+ this.tot=localStorage.getItem('total_price');
+    
   }
+  checkoutt(){
+    this.navCtrl.push(CheckoutPage);
+  }
+
+
 
 }

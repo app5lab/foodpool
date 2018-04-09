@@ -39965,18 +39965,16 @@ page-bookmarks .search-form,
   border-radius: 4px;
 }
 
-h6 {
+page-cartview h6 {
   font-size: 1.2rem;
 }
 
-#aaa {
+page-cartview #aaa {
   font-size: 10px;
 }
 
-#texted {
-  font-size: 10px;
-  display: block;
-  -webkit-box-flex: 1;
+page-cartview .label {
+  margin: 0;
 }
 
 page-collections ion-item,

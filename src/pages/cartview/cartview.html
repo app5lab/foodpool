@@ -6,65 +6,53 @@
 
 
 
-<ion-content style="margin-top:5%; padding-top:10%">
+<ion-content style="margin-top:5%; padding-top:10%; padding-bottom:30px">
   <div >
     <ion-list >
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/bugger.jpg">
-        </ion-thumbnail>
-        <h2 style="padding-top:10px">Vegan Greek Salad</h2>
-        <h6>by : Sanjeeb Kapoor</h6>
-        <ion-col id="aaa" center text-center>
-            <ion-note>
-              Qty.(2)
-            </ion-note>
-          </ion-col>
-           
-         
+      <ion-item *ngFor="let item of items">
+     <ion-grid>
+       <ion-row align-items-center>
+         <ion-col col-10>
+            <h2 style="padding-top:10px">
+                {{item.name}}
+              </h2>
+              <h6>
+                Rs.{{item.variation_price}}
+              </h6>
+         </ion-col>
+         <ion-col>
+            <h3 id="qty">x{{item.qty}}</h3>
+         </ion-col>
+       </ion-row>
+       
+     </ion-grid>
+        
+            
       </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/bugger.jpg">
-        </ion-thumbnail>
-        <h2>Oscar</h2>
-        <h6>by : Sanjeeb Kapoor</h6>
-        <ion-col id="aaa" center text-center>
-            <ion-note>
-              Qty.(2)
-            </ion-note>
-          </ion-col>
-      </ion-item>
-     
+    
      
 </ion-list>
 </div>
 
-<ion-item>
+<h1 style="padding-left:5%">  
+    Total Price <div style="text-align:right; padding-left:5%; padding-bottom:10%">
+        <b>{{tot}}</b>  
+    </div>
+  </h1>
+ 
+<ion-item style="padding-bottom:5%">
     <ion-icon item-start name="basket"></ion-icon>
 	<h4>NET20 (20% off)</h4>
 
 	<button ion-button clear item-end>View</button>
 </ion-item>
 
-  <pre id="texted">  
-                          Sub total   Rs:200
-                          Delivery    Free
-                          Tax         0
-                          Coupon      -Rs  40
-                          
-                          Total    Rs : 650/-
-    </pre>
 
 </ion-content>
 
-<ion-item>
-    <ion-label>Username</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
 
-  <ion-footer>
-	<ion-toolbar  color="primary">
-	  <ion-title  style="color:white;">Proceed to checkout</ion-title>
+  <ion-footer  >
+	<ion-toolbar  color="primary"  (click)="checkoutt()">
+	  <ion-title  style="color:white;" >Proceed to checkout</ion-title>
 	</ion-toolbar>
   </ion-footer>

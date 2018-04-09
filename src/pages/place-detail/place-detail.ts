@@ -8,6 +8,7 @@ import {ReviewsPage} from '../reviews/reviews';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { CartviewPage } from '../cartview/cartview';
+import { CheckoutPage } from '../checkout/checkout';
 
 /*
  Generated class for the LoginPage page.
@@ -25,8 +26,10 @@ export class PlaceDetailPage {
   public workingHour:any;
   objectKeys = Object.keys;
   open:any = -1
+  total_price = 0;
   constructor( public nav: NavController, public placeService: PlaceService, params: NavParams, private http: Http) {
-    // get first place for example
+    if(localStorage.getItem('total_price') != null)
+      this.total_price = parseInt(localStorage.getItem('total_price'))
     this.place = placeService.getItem(1);
     var detail = params.get('detail');
     let headers = new Headers( { 'Content-Type': 'application/json' } )
@@ -78,8 +81,17 @@ export class PlaceDetailPage {
         items.push(item);
       else
         items.find(x => {return x.id === item.id}).qty = items.find(x => {return x.id === item.id}).qty +1; 
-      localStorage.setItem('cart',JSON.stringify(items));      
+      
+      localStorage.setItem('cart',JSON.stringify(items));
     }
+    if(localStorage.getItem('total_price')==null){
+      localStorage.setItem('total_price',item.variation_price + '')
+    }    
+    else{
+     var temp_price= parseInt(localStorage.getItem('total_price'))+item.variation_price
+     localStorage.setItem('total_price',temp_price+ '')
+    }
+    this.total_price = parseInt(localStorage.getItem('total_price'))    
   }
   toggleSection(i) {
     this.categorized[i].open = !this.categorized[i].open;
@@ -189,4 +201,6 @@ export class PlaceDetailPage {
   viewcart(){
     this.nav.push(CartviewPage);
   }
+
+ 
 }

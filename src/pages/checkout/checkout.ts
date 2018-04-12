@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MapPage } from '../map/map';
 
 /**
  * Generated class for the CheckoutPage page.
@@ -14,12 +15,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'checkout.html',
 })
 export class CheckoutPage {
-
+  test :any="";
+  [x: string]: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CheckoutPage');
+  }
+
+  myCallbackFunction  (_params)  {
+    return new Promise((resolve, reject) => {
+        this.test = _params;
+        console.log(this.test);
+        
+        resolve();
+    });
+   }
+  
+  map(){
+    this.navCtrl.push(MapPage,{callback:this.myCallbackFunction.bind(this)})
+   
   }
 
 

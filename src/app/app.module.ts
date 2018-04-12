@@ -38,6 +38,7 @@ import { HttpModule } from '@angular/http';
 import {HTTP} from '@ionic-native/http';
 import { CartviewPage } from '../pages/cartview/cartview';
 import { CheckoutPage } from '../pages/checkout/checkout';
+import { PoolPage } from '../pages/pool/pool';
 // end import pages
 
 
@@ -66,6 +67,7 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     SignUpPage,
     UserPage,
     CartviewPage,
+    PoolPage,
     CheckoutPage,
     // HTTP
   ],
@@ -111,6 +113,7 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     SignUpPage,
     CartviewPage,
     CheckoutPage,
+    PoolPage,
     UserPage,
     // HTTP,
   ],

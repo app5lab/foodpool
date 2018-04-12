@@ -14,31 +14,34 @@
 
 <ion-content padding class="outer-content">
 
-    <button ion-item>
-       
-        <ion-label>Contact info <p style="font-size:15px">Please Enter Contact info</p>
-           
-        </ion-label>
-       
-      </button>
-      <button ion-item>
-         
-          <ion-label>Delivery address<p style="font-size:15px"><ion-icon name="home" style=" color:red" > </ion-icon> Shawala Rd</p>
-              
+    
+        
+        <ion-item>
+          <ion-label  floating>Contact info 
           </ion-label>
-        </button>
-        <button ion-item>
-       
-            <ion-label>Deliver time<p style="font-size:15px">ASAP (50min)</p>
-                
-            </ion-label>
-          </button>
-          <button ion-item>
-              
-              <ion-label>Payment<p style="font-size:15px">Please Select Payment Method</p>
-              </ion-label>
-            </button>
+          <ion-input type="text" value="Please Enter Contact info" ></ion-input>
+        </ion-item>
+        
+      <div (click)="map()">
+        <ion-item >
+          <ion-label  floating>Delivery address
+          </ion-label>
+          <ion-input type="text" value={{test}} disabled ></ion-input>
+        </ion-item>
+      </div>
 
+        <ion-item>
+          <ion-label  floating>Deliver time
+          </ion-label>
+          <ion-input type="text" value="ASAP (50min)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label  floating>Payment
+           </ion-label>
+          <ion-input type="text" value="Please Select Payment Method"></ion-input> 
+        </ion-item>
+ 
 </ion-content>
 
 <ion-footer  >

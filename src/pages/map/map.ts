@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, Platform} from 'ionic-angular';
+import {NavController, Platform, NavParams} from 'ionic-angular';
 declare var google: any;
 /*
  Generated class for the LoginPage page.
@@ -13,8 +13,8 @@ declare var google: any;
 })
 export class MapPage {
   public map: any;
-
-  constructor(public nav: NavController, public platform: Platform) {
+callback: any;
+  constructor(public nav: NavController, public platform: Platform, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -34,8 +34,13 @@ export class MapPage {
     });
 
    
+
   }
 
+  
+ionViewWillEnter() {
+  this.callback = this.navParams.get("callback")
+}
   get(){
     console.log(
      this.map.getCenter().lat(),
@@ -46,7 +51,7 @@ export class MapPage {
 
   }
   geocodeLatLng(geocoder, map) {
-   
+   var that=this;
 
     var latlng = {lat: parseFloat( this.map.getCenter().lat()), lng: parseFloat( this.map.getCenter().lng())};
     geocoder.geocode({'location': latlng}, function(results, status) {
@@ -57,8 +62,10 @@ export class MapPage {
             // position: latlng,
             // map: map
           // });
-          console.log(results[0].formatted_address);
-          
+         
+          that.callback(results[0].formatted_address).then(()=>{
+            that.nav.pop();
+        });
           // infowindow.setContent(results[0].formatted_address);
           // infowindow.open(map, marker);
         } else {

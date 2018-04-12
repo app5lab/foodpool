@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 302:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartviewPageModule", function() { return CartviewPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckoutPageModule", function() { return CheckoutPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cartview__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkout__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CartviewPageModule = (function () {
-    function CartviewPageModule() {
+var CheckoutPageModule = (function () {
+    function CheckoutPageModule() {
     }
-    CartviewPageModule = __decorate([
+    CheckoutPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cartview__["a" /* CartviewPage */],
+                __WEBPACK_IMPORTED_MODULE_2__checkout__["a" /* CheckoutPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cartview__["a" /* CartviewPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__checkout__["a" /* CheckoutPage */]),
             ],
         })
-    ], CartviewPageModule);
-    return CartviewPageModule;
+    ], CheckoutPageModule);
+    return CheckoutPageModule;
 }());
 
-//# sourceMappingURL=cartview.module.js.map
+//# sourceMappingURL=checkout.module.js.map
 
 /***/ })
 

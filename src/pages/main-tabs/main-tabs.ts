@@ -4,6 +4,7 @@ import {HomePage} from '../home/home';
 import {CollectionsPage} from '../collections/collections';
 import {FeedPage}from '../feed/feed';
 import {AccountPage} from '../account/account';
+import { PoolPage } from '../pool/pool';
 
 /*
  Generated class for the LoginPage page.
@@ -20,6 +21,6 @@ export class MainTabsPage {
   public tabCollections = CollectionsPage;
   public tabFeed = FeedPage;
   public tabAccount = AccountPage;
-
+public tabPools=PoolPage;
   constructor(public nav: NavController) {}
 }

@@ -20,7 +20,7 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 })
 export class PlaceDetailPage {
   public place:any;
-  public categorized: any = {}
+  public categorized: any []= []
   public workingHour:any;
   objectKeys = Object.keys;
   open:any = -1
@@ -36,17 +36,46 @@ export class PlaceDetailPage {
       this.categorized = res.json();
       console.log( this.categorized )
       
-    }, err => console.log( err ) )
+    }, err => console.log( err ), () =>{
+      var items = []
+      items = JSON.parse(localStorage.getItem('cart'))
+      this.objectKeys(this.categorized).forEach(categories => {
+        var keys = this.objectKeys(this.categorized[categories]);
+        keys.forEach(key => {
+          if(items.find(x => {return x.id == key}) != null)
+             this.categorized[categories][key].item.forEach(food => {
+               console.log(food);
+               
+             });
+        })
+      });
+    })
     console.log(detail);
     console.log(this.place);
     
+
     this.place.name = detail.title;
     this.place.menu = this.categorized;
     // get working hours
     this.workingHour = this.getWorkingHours(this.place.working_hours);
   }
   add_to_cart(item){
-    console.log(item); 
+    item.qty = item.qty +1
+    var items = []
+    if(localStorage.getItem('cart') == null){
+      items.push(item)
+      localStorage.setItem('cart',JSON.stringify(items));
+    }
+    else{
+      items = JSON.parse(localStorage.getItem('cart'))
+      console.log(items.find(x => {return x.id === item.id}));
+      var i =items.find(x => {return x.id === item.id})
+      if(i == null)
+        items.push(item);
+      else
+        items.find(x => {return x.id === item.id}).qty = items.find(x => {return x.id === item.id}).qty +1; 
+      localStorage.setItem('cart',JSON.stringify(items));      
+    }
   }
   toggleSection(i) {
     this.categorized[i].open = !this.categorized[i].open;

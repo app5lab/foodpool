@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { MainTabsPage } from '../pages/main-tabs/main-tabs';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import { PlaceDetailPage } from '../pages/place-detail/place-detail';
+import { MapPage } from '../pages/map/map';
 
 @Component({
   template: '<ion-nav #myNav [root]="rootPage"></ion-nav>'

@@ -36,6 +36,9 @@ import {SignUpPage} from '../pages/sign-up/sign-up';
 import {UserPage} from '../pages/user/user';
 import { HttpModule } from '@angular/http';
 import {HTTP} from '@ionic-native/http';
+import { CartviewPage } from '../pages/cartview/cartview';
+import { CheckoutPage } from '../pages/checkout/checkout';
+import { PoolPage } from '../pages/pool/pool';
 // end import pages
 
 
@@ -63,6 +66,9 @@ import {HTTP} from '@ionic-native/http';
     SelectLocationPage,
     SignUpPage,
     UserPage,
+    CartviewPage,
+    PoolPage,
+    CheckoutPage,
     // HTTP
   ],
   imports: [
@@ -105,6 +111,9 @@ import {HTTP} from '@ionic-native/http';
     SearchPage,
     SelectLocationPage,
     SignUpPage,
+    CartviewPage,
+    CheckoutPage,
+    PoolPage,
     UserPage,
     // HTTP,
   ],

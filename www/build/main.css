@@ -39965,6 +39965,18 @@ page-bookmarks .search-form,
   border-radius: 4px;
 }
 
+page-cartview h6 {
+  font-size: 1.2rem;
+}
+
+page-cartview #aaa {
+  font-size: 10px;
+}
+
+page-cartview .label {
+  margin: 0;
+}
+
 page-collections ion-item,
 .collections ion-item {
   padding: 0;
@@ -40201,6 +40213,15 @@ page-login .fill,
   height: 515px;
 }
 
+.cross {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: -10px;
+  left: 50%;
+  font-size: 50px;
+}
+
 page-menu .custom {
   display: block;
   margin-top: 17px;
@@ -40335,4 +40356,114 @@ page-places ion-card ion-card-header > div,
 page-places ion-card ion-card-header > div:last-child,
 .places ion-card ion-card-header > div:last-child {
   border-bottom: 1px solid #F7F7F7;
+}
+
+page-pool .container {
+  position: relative;
+}
+
+page-pool .div1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+page-pool .div2 {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  z-index: 3;
+}
+
+page-pool .div3 {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 3;
+  background-color: white !important;
+  color: orange !important;
+}
+
+page-pool .fill {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  height: 120px;
+  z-index: 1;
+}
+
+page-pool .fill img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+}
+
+page-pool ion-slides {
+  height: 170px;
+}
+
+page-pool .card {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+page-pool #only {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 17px;
+  text-align: center;
+  color: white;
+  background-color: orange;
+}
+
+page-pool .button-fab {
+  bottom: 60px;
+}
+
+page-pool .item-avatar {
+  width: 36px;
+  height: 36px;
+}
+
+page-pool h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+page-pool .item-header.border-bottom {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+page-pool .post-images {
+  margin-top: 5px;
+}
+
+page-pool .post-images img {
+  width: 64px;
+  height: 64px;
+}
+
+page-pool .action-buttons ion-icon {
+  margin-right: 15px;
+}
+
+page-pool .button-set.set-2 button {
+  width: 50%;
+  display: inline-block;
+  margin: 0;
 }

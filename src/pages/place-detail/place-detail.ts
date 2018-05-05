@@ -7,6 +7,8 @@ import {PhotosPage} from '../photos/photos';
 import {ReviewsPage} from '../reviews/reviews';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { CartviewPage } from '../cartview/cartview';
+import { CheckoutPage } from '../checkout/checkout';
 
 /*
  Generated class for the LoginPage page.
@@ -24,8 +26,10 @@ export class PlaceDetailPage {
   public workingHour:any;
   objectKeys = Object.keys;
   open:any = -1
+  total_price = 0;
   constructor( public nav: NavController, public placeService: PlaceService, params: NavParams, private http: Http) {
-    // get first place for example
+    if(localStorage.getItem('total_price') != null)
+      this.total_price = parseInt(localStorage.getItem('total_price'))
     this.place = placeService.getItem(1);
     var detail = params.get('detail');
     let headers = new Headers( { 'Content-Type': 'application/json' } )
@@ -42,10 +46,12 @@ export class PlaceDetailPage {
       this.objectKeys(this.categorized).forEach(categories => {
         var keys = this.objectKeys(this.categorized[categories]);
         keys.forEach(key => {
-          if(items.find(x => {return x.id == key}) != null)
+          var temp=items.find(x => {return x.id == key})
+          if(temp != null)
              this.categorized[categories][key].item.forEach(food => {
-               console.log(food);
-               
+               if(food.variation_name==temp.variation_name)
+                  food.qty=temp.qty
+
              });
         })
       });
@@ -60,6 +66,7 @@ export class PlaceDetailPage {
     this.workingHour = this.getWorkingHours(this.place.working_hours);
   }
   add_to_cart(item){
+  
     item.qty = item.qty +1
     var items = []
     if(localStorage.getItem('cart') == null){
@@ -74,8 +81,17 @@ export class PlaceDetailPage {
         items.push(item);
       else
         items.find(x => {return x.id === item.id}).qty = items.find(x => {return x.id === item.id}).qty +1; 
-      localStorage.setItem('cart',JSON.stringify(items));      
+      
+      localStorage.setItem('cart',JSON.stringify(items));
     }
+    if(localStorage.getItem('total_price')==null){
+      localStorage.setItem('total_price',item.variation_price + '')
+    }    
+    else{
+     var temp_price= parseInt(localStorage.getItem('total_price'))+item.variation_price
+     localStorage.setItem('total_price',temp_price+ '')
+    }
+    this.total_price = parseInt(localStorage.getItem('total_price'))    
   }
   toggleSection(i) {
     this.categorized[i].open = !this.categorized[i].open;
@@ -181,4 +197,10 @@ export class PlaceDetailPage {
   goToReviews() {
     this.nav.push(ReviewsPage);
   }
+
+  viewcart(){
+    this.nav.push(CartviewPage);
+  }
+
+ 
 }

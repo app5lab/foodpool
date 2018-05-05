@@ -102,6 +102,7 @@
                 <!-- <p text-lowercase>{{ final.description }}</p> -->
                 <button ion-button outline item-end >Qty {{ final.qty }}</button>                
                 <button ion-button outline item-end >Rs.{{ final.variation_price }}</button>
+
               </ion-item>
             </ion-list>
     
@@ -201,3 +202,12 @@
   </div>
 
 </ion-content>
+
+<ion-footer>
+    <ion-navbar color="primary" (click)="viewcart()">
+        <ion-title>View Cart</ion-title>
+        <ion-buttons end>
+            <button ion-button outline item-end style="color:white;">Rs.{{total_price}}</button>            
+          </ion-buttons>
+      </ion-navbar>
+</ion-footer>

@@ -1,0 +1,61 @@
+<ion-header>
+	<ion-navbar color="primary">
+	  <ion-title>Cart</ion-title>
+	</ion-navbar>
+  </ion-header>
+
+
+
+<ion-content style="margin-top:5%; padding-top:10%; padding-bottom:30px">
+  <div >
+    <ion-list >
+      <ion-item *ngFor="let item of items">
+     <ion-grid>
+       <ion-row align-items-center>
+         <ion-col col-10>
+            <h2 style="padding-top:10px">
+                {{item.name}}
+              </h2>
+              <h6>
+                Rs.{{item.variation_price}}
+              </h6>
+         </ion-col>
+         <ion-col>
+            <h3 id="qty">x{{item.qty}}</h3>
+         </ion-col>
+       </ion-row>
+       
+     </ion-grid>
+        
+            
+      </ion-item>
+    
+     
+</ion-list>
+</div>
+<div padding style="width:100%;display:flex;">
+  
+  <h1 style="width:40%">  
+    Total Price 
+  </h1>
+  <h1 style="width:50%;text-align:right;margin:0;">
+    <b>{{tot}}</b>  
+  </h1>
+  
+</div>
+<ion-item style="padding-bottom:5%">
+    <ion-icon item-start name="basket"></ion-icon>
+	<h4>NET20 (20% off)</h4>
+
+	<button ion-button clear item-end>View</button>
+</ion-item>
+
+
+</ion-content>
+
+
+  <ion-footer  >
+	<ion-toolbar  color="primary"  (click)="checkoutt()">
+	  <ion-title  style="color:white;" >Proceed to checkout</ion-title>
+	</ion-toolbar>
+  </ion-footer>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MapPage } from '../map/map';
+
 
 /**
  * Generated class for the CheckoutPage page.
@@ -34,7 +34,7 @@ export class CheckoutPage {
    }
   
   map(){
-    this.navCtrl.push(MapPage,{callback:this.myCallbackFunction.bind(this)})
+    this.navCtrl.push('MapPage',{callback:this.myCallbackFunction.bind(this)})
    
   }
 

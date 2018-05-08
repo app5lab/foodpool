@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {App, NavController} from 'ionic-angular';
+import {App, NavController, IonicPage} from 'ionic-angular';
 import {CollectionService} from '../../services/collection-service';
-import {PlacesPage} from '../places/places';
+
 
 /*
  Generated class for the LoginPage page.
@@ -9,6 +9,7 @@ import {PlacesPage} from '../places/places';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-collections',
   templateUrl: 'collections.html'
@@ -28,6 +29,6 @@ export class CollectionsPage {
 
   // view a collection
   goToCollection(id) {
-    this.app.getRootNav().push(PlacesPage);
+    this.app.getRootNav().push('PlacesPage');
   }
 }

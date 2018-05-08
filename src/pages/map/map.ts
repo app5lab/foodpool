@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, Platform, NavParams} from 'ionic-angular';
+import {NavController, Platform, NavParams, IonicPage} from 'ionic-angular';
 declare var google: any;
 /*
  Generated class for the LoginPage page.
@@ -7,6 +7,7 @@ declare var google: any;
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html'

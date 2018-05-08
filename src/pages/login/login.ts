@@ -1,8 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {ForgotPasswordPage} from '../forgot-password/forgot-password';
-import {SignUpPage} from '../sign-up/sign-up';
-import {MainTabsPage} from '../main-tabs/main-tabs';
+import {NavController, IonicPage} from 'ionic-angular';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { Http, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
@@ -15,6 +12,7 @@ import { Headers } from '@angular/http';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -24,7 +22,7 @@ export class LoginPage {
   constructor( public nav: NavController, private facebook: Facebook, private http: Http, public hp : HTTP, public alert: AlertController) {}
   // go to forgot password page
   forgotPwd() {
-    this.nav.push(ForgotPasswordPage);
+    this.nav.push('ForgotPasswordPage');
   }
 
   user: any = {
@@ -39,7 +37,7 @@ export class LoginPage {
       console.log(res)
       if(res.json().id != null)
       {
-        this.nav.setRoot(MainTabsPage)
+        this.nav.setRoot('MainTabsPage')
       }
       else{
         this.alert.create({title:res.json().error,buttons:[{text:'OK'}]}).present()
@@ -97,6 +95,6 @@ export class LoginPage {
   // go to sign up page
   signUp() {
     // add our sign up code here
-    this.nav.push(SignUpPage);
+    this.nav.push('SignUpPage');
   }
 }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, IonicPage} from 'ionic-angular';
 import {PlaceService} from '../../services/place-service';
 
 /*
@@ -8,6 +8,7 @@ import {PlaceService} from '../../services/place-service';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html'

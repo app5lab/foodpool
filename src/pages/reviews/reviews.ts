@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, IonicPage} from 'ionic-angular';
 import {ReviewService} from '../../services/review-service';
 
 /*
@@ -8,6 +8,7 @@ import {ReviewService} from '../../services/review-service';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-reviews',
   templateUrl: 'reviews.html'

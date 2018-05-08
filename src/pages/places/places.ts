@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
-import {App, NavController, ModalController} from 'ionic-angular';
+import {App, NavController, ModalController, IonicPage} from 'ionic-angular';
 import {PlaceService} from '../../services/place-service';
-import {FiltersPage} from '../filters/filters';
-import {PlaceDetailPage} from '../place-detail/place-detail';
-import {SearchPage} from '../search/search';
+
 
 
 /*
@@ -12,6 +10,7 @@ import {SearchPage} from '../search/search';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-places',
   templateUrl: 'places.html'
@@ -81,17 +80,17 @@ export class PlacesPage {
 
   // show filters
   showFilters() {
-    let filterModal = this.modalCtrl.create(FiltersPage);
+    let filterModal = this.modalCtrl.create('FiltersPage');
     filterModal.present();
   }
 
   // view a place
   viewPlace(id) {
-    this.nav.push(PlaceDetailPage, {id: id});
+    this.nav.push('PlaceDetailPage', {id: id});
   }
 
   // go to search page
   goToSearch() {
-    this.app.getRootNav().push(SearchPage);
+    this.app.getRootNav().push('SearchPage');
   }
 }

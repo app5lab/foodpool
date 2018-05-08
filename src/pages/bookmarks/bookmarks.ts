@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {PlaceService} from '../../services/place-service';
-import {PlaceDetailPage} from '../place-detail/place-detail';
+import {NavController, IonicPage} from 'ionic-angular';
+import { PlaceService } from '../../services/place-service';
+
 
 /*
  Generated class for the LoginPage page.
@@ -9,6 +9,7 @@ import {PlaceDetailPage} from '../place-detail/place-detail';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-bookmarks',
   templateUrl: 'bookmarks.html'
@@ -23,6 +24,6 @@ export class BookmarksPage {
 
   // view a place
   viewPlace(id) {
-    this.nav.push(PlaceDetailPage, {id: id});
+    this.nav.push('PlaceDetailPage', {id: id});
   }
 }

@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
-import {App, NavController} from 'ionic-angular';
+import {App, NavController, IonicPage} from 'ionic-angular';
 import {PlaceService} from '../../services/place-service';
-import {SelectLocationPage} from '../select-location/select-location';
-import {PlacesPage} from '../places/places';
-import {PlaceDetailPage} from '../place-detail/place-detail';
-import {SearchPage} from '../search/search';
-import {BookmarksPage} from '../bookmarks/bookmarks';
-import {MapPage} from '../map/map';
-import {NearbyPage} from '../nearby/nearby';
 import { Http, RequestOptions,Headers } from '@angular/http';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { HTTP } from '@ionic-native/http'
@@ -19,6 +12,7 @@ import { HTTP } from '@ionic-native/http'
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -62,41 +56,41 @@ export class HomePage {
   }
 
   open_r(item){
-    this.nav.push(PlaceDetailPage, {detail: item})
+    this.nav.push('PlaceDetailPage', {detail: item})
   }
 
   // go to select location page
   selectLocation() {
-    this.nav.push(SelectLocationPage);
+    this.nav.push('SelectLocationPage');
   }
 
   // go to places
   viewPlaces() {
-    this.app.getRootNav().push(PlacesPage);
+    this.app.getRootNav().push('PlacesPage');
   }
 
   // view a place
   viewPlace(id) {
-    this.app.getRootNav().push(PlaceDetailPage, {id: id});
+    this.app.getRootNav().push('PlaceDetailPage', {id: id});
   }
 
   // go to search page
   goToSearch() {
-    this.app.getRootNav().push(SearchPage);
+    this.app.getRootNav().push('SearchPage');
   }
 
   // go to bookmarks page
   goToBookmarks() {
-    this.app.getRootNav().push(BookmarksPage);
+    this.app.getRootNav().push('BookmarksPage');
   }
 
   // view map
   goToMap() {
-    this.app.getRootNav().push(MapPage);
+    this.app.getRootNav().push('MapPage');
   }
 
   // view nearby page
   goToNearBy() {
-    this.app.getRootNav().push(NearbyPage);
+    this.app.getRootNav().push('NearbyPage');
   }
 }

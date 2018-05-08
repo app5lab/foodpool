@@ -1,10 +1,6 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {HomePage} from '../home/home';
-import {CollectionsPage} from '../collections/collections';
-import {FeedPage}from '../feed/feed';
-import {AccountPage} from '../account/account';
-import { PoolPage } from '../pool/pool';
+import {NavController, IonicPage} from 'ionic-angular';
+
 
 /*
  Generated class for the LoginPage page.
@@ -12,15 +8,16 @@ import { PoolPage } from '../pool/pool';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-main-tabs',
   templateUrl: 'main-tabs.html'
 })
 export class MainTabsPage {
-  public tabHome = HomePage;
-  public tabCollections = CollectionsPage;
-  public tabFeed = FeedPage;
-  public tabAccount = AccountPage;
-public tabPools=PoolPage;
+  public tabHome = 'HomePage';
+  public tabCollections = 'CollectionsPage';
+  public tabFeed = 'FeedPage';
+  public tabAccount = 'AccountPage';
+public tabPools='PoolPage';
   constructor(public nav: NavController) {}
 }

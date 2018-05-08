@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import {PlaceService} from '../../services/place-service';
-import {SelectLocationPage} from '../select-location/select-location';
-import {PlacesPage} from '../places/places';
-import {PlaceDetailPage} from '../place-detail/place-detail';
-import {SearchPage} from '../search/search';
-import {BookmarksPage} from '../bookmarks/bookmarks';
-import {MapPage} from '../map/map';
-import {NearbyPage} from '../nearby/nearby';
+
 import { Http, RequestOptions,Headers } from '@angular/http';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { HTTP } from '@ionic-native/http'
@@ -53,42 +47,42 @@ export class PoolPage {
   }
 
   open_r(item){
-    this.navCtrl.push(PlaceDetailPage, {detail: item})
+    this.navCtrl.push('PlaceDetailPage', {detail: item})
   }
 
   // go to select location page
   selectLocation() {
-    this.navCtrl.push(SelectLocationPage);
+    this.navCtrl.push('SelectLocationPage');
   }
 
   // go to places
   viewPlaces() {
-    this.app.getRootNav().push(PlacesPage);
+    this.app.getRootNav().push('PlacesPage');
   }
 
   // view a place
   viewPlace(id) {
-    this.app.getRootNav().push(PlaceDetailPage, {id: id});
+    this.app.getRootNav().push('PlaceDetailPage', {id: id});
   }
 
   // go to search page
   goToSearch() {
-    this.app.getRootNav().push(SearchPage);
+    this.app.getRootNav().push('SearchPage');
   }
 
   // go to bookmarks page
   goToBookmarks() {
-    this.app.getRootNav().push(BookmarksPage);
+    this.app.getRootNav().push('BookmarksPage');
   }
 
   // view map
   goToMap() {
-    this.app.getRootNav().push(MapPage);
+    this.app.getRootNav().push('MapPage');
   }
 
   // view nearby page
   goToNearBy() {
-    this.app.getRootNav().push(NearbyPage);
+    this.app.getRootNav().push('NearbyPage');
   }
   
 

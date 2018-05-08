@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
-import { CheckoutPage } from '../checkout/checkout';
+
 
 /**
  * Generated class for the CartviewPage page.
@@ -30,7 +30,7 @@ export class CartviewPage  {
     
   }
   checkoutt(){
-    this.navCtrl.push(CheckoutPage);
+    this.navCtrl.push('CheckoutPage');
   }
 
 

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, IonicPage} from 'ionic-angular';
 import {ReviewService} from '../../services/review-service';
-import {PlaceDetailPage} from '../place-detail/place-detail';
+
 // import data from '../../data.json'
 // import data from '../../data.json';
 
@@ -11,6 +11,7 @@ import {PlaceDetailPage} from '../place-detail/place-detail';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-feed',
   templateUrl: 'feed.html'
@@ -29,6 +30,6 @@ export class FeedPage {
 
   // view a place
   viewPlace(id) {
-    this.nav.push(PlaceDetailPage, {id: id});
+    this.nav.push('PlaceDetailPage', {id: id});
   }
 }

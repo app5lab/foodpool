@@ -9,5 +9,6 @@ import { PoolPage } from './pool';
   imports: [
     IonicPageModule.forChild(PoolPage),
   ],
+  exports:[PoolPage]
 })
 export class PoolPageModule {}

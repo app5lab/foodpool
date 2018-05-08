@@ -1,14 +1,10 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, IonicPage} from 'ionic-angular';
 import {PlaceService} from '../../services/place-service';
-import {MenuPage} from '../menu/menu';
-import {MapPage} from '../map/map';
-import {PhotosPage} from '../photos/photos';
-import {ReviewsPage} from '../reviews/reviews';
+
 import { NavParams } from 'ionic-angular/navigation/nav-params';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import { CartviewPage } from '../cartview/cartview';
-import { CheckoutPage } from '../checkout/checkout';
+
 
 /*
  Generated class for the LoginPage page.
@@ -16,6 +12,7 @@ import { CheckoutPage } from '../checkout/checkout';
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-place-detail',
   templateUrl: 'place-detail.html'
@@ -180,26 +177,26 @@ export class PlaceDetailPage {
 
   // go to map
   goToMap() {
-    this.nav.push(MapPage);
+    this.nav.push('MapPage');
   }
 
   // to to menu page
   goToMenu() {
-    this.nav.push(MenuPage);
+    this.nav.push('MenuPage');
   }
 
   // go to photos
   goToPhotos() {
-    this.nav.push(PhotosPage);
+    this.nav.push('PhotosPage');
   }
 
   // go to reviews
   goToReviews() {
-    this.nav.push(ReviewsPage);
+    this.nav.push('ReviewsPage');
   }
 
   viewcart(){
-    this.nav.push(CartviewPage);
+    this.nav.push('CartviewPage');
   }
 
  

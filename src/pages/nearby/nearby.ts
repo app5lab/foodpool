@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, Platform} from 'ionic-angular';
+import {NavController, Platform, IonicPage} from 'ionic-angular';
 declare var google: any;
 
 /*
@@ -8,6 +8,7 @@ declare var google: any;
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-nearby',
   templateUrl: 'nearby.html'

@@ -4,11 +4,9 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 // import pages
-import {LoginPage} from '../pages/login/login';
-import { HomePage } from '../pages/home/home';
-import { MainTabsPage } from '../pages/main-tabs/main-tabs';
+
 import { NavController } from 'ionic-angular/navigation/nav-controller';
-import { PlaceDetailPage } from '../pages/place-detail/place-detail';
+
 
 @Component({
   template: '<ion-nav #myNav [root]="rootPage"></ion-nav>'
@@ -21,7 +19,7 @@ export class MyApp {
     console.log( localStorage )
     if ( !( localStorage.getItem( 'is_logged_in' ) == "true" ) )
     {
-      this.nav.setRoot( LoginPage )
+      this.nav.setRoot( 'LoginPage' )
     }
 
   }

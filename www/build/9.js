@@ -1,14 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 293:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NearbyPageModule", function() { return NearbyPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotosPageModule", function() { return PhotosPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nearby__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__photos__ = __webpack_require__(321);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var NearbyPageModule = (function () {
-    function NearbyPageModule() {
+var PhotosPageModule = (function () {
+    function PhotosPageModule() {
     }
-    NearbyPageModule = __decorate([
+    PhotosPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__nearby__["a" /* NearbyPage */],
+                __WEBPACK_IMPORTED_MODULE_2__photos__["a" /* PhotosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__nearby__["a" /* NearbyPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__photos__["a" /* PhotosPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__nearby__["a" /* NearbyPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__photos__["a" /* PhotosPage */]]
         })
-    ], NearbyPageModule);
-    return NearbyPageModule;
+    ], PhotosPageModule);
+    return PhotosPageModule;
 }());
 
-//# sourceMappingURL=nearby.module.js.map
+//# sourceMappingURL=photos.module.js.map
 
 /***/ }),
 
-/***/ 317:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NearbyPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhotosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,39 +58,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /*
  Generated class for the LoginPage page.
 
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var NearbyPage = (function () {
-    function NearbyPage(nav, platform) {
+var PhotosPage = (function () {
+    function PhotosPage(nav, placeService) {
         this.nav = nav;
-        this.platform = platform;
+        this.placeService = placeService;
+        // get first place for example
+        this.place = placeService.getItem(1);
     }
-    NearbyPage.prototype.ionViewDidLoad = function () {
-        // init map
-        this.initializeMap();
-    };
-    NearbyPage.prototype.initializeMap = function () {
-        var minZoomLevel = 18;
-        this.map = new google.maps.Map(document.getElementById('map_canvas'), {
-            zoom: minZoomLevel,
-            center: new google.maps.LatLng(31.451101, 74.291664),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-    };
-    NearbyPage = __decorate([
+    PhotosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-nearby',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\nearby\nearby.html"*/'<!--\n\n  Generated template for the NearbyPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n	<ion-navbar color="primary" >\n\n	  <ion-title>Nearby</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\nearby\nearby.html"*/
+            selector: 'page-photos',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\photos\photos.html"*/'<!--\n\n  Generated template for the PhotosPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Photos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row wrap>\n\n      <ion-col class="rlt" col-4 *ngFor="let photo of place.photos" (click)="viewPlace(place.id)">\n\n        <img class="round" src="{{ photo.thumb }}" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\photos\photos.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]])
-    ], NearbyPage);
-    return NearbyPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
+    ], PhotosPage);
+    return PhotosPage;
 }());
 
-//# sourceMappingURL=nearby.js.map
+//# sourceMappingURL=photos.js.map
 
 /***/ })
 

@@ -1,14 +1,14 @@
 webpackJsonp([17],{
 
-/***/ 285:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedPageModule", function() { return FeedPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FiltersPageModule", function() { return FiltersPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__feed__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filters__ = __webpack_require__(312);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FeedPageModule = (function () {
-    function FeedPageModule() {
+var FiltersPageModule = (function () {
+    function FiltersPageModule() {
     }
-    FeedPageModule = __decorate([
+    FiltersPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__feed__["a" /* FeedPage */],
+                __WEBPACK_IMPORTED_MODULE_2__filters__["a" /* FiltersPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__feed__["a" /* FeedPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__filters__["a" /* FiltersPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__feed__["a" /* FeedPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__filters__["a" /* FiltersPage */]]
         })
-    ], FeedPageModule);
-    return FeedPageModule;
+    ], FiltersPageModule);
+    return FiltersPageModule;
 }());
 
-//# sourceMappingURL=feed.module.js.map
+//# sourceMappingURL=filters.module.js.map
 
 /***/ }),
 
-/***/ 309:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FiltersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_review_service__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,38 +57,83 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-// import data from '../../data.json'
-// import data from '../../data.json';
 /*
  Generated class for the LoginPage page.
 
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var FeedPage = (function () {
-    function FeedPage(nav, reviewService) {
+var FiltersPage = (function () {
+    function FiltersPage(nav, viewCtrl) {
         this.nav = nav;
-        this.reviewService = reviewService;
-        // feed
-        this.reviews = reviewService.getAll();
-        // console.log(data) 
-        this.posts = [];
+        this.viewCtrl = viewCtrl;
+        this.sorts = [
+            {
+                id: 1,
+                icon: "ios-pin-outline",
+                name: "Distance",
+                active: "active",
+                sortDirection: false,
+                sortAsc: false
+            },
+            {
+                id: 2,
+                icon: "star-outline",
+                name: "Rating",
+                active: "",
+                sortDirection: true,
+                sortAsc: false
+            },
+            {
+                id: 3,
+                icon: "logo-usd",
+                name: "Cost",
+                active: "",
+                sortDirection: true,
+                sortAsc: true
+            },
+            {
+                id: 4,
+                icon: "md-heart-outline",
+                name: "Popularity",
+                active: "",
+                sortDirection: false,
+                sortAsc: false
+            }
+        ];
     }
-    // view a place
-    FeedPage.prototype.viewPlace = function (id) {
-        this.nav.push('PlaceDetailPage', { id: id });
+    // choose sort by...
+    FiltersPage.prototype.chooseSort = function (sort) {
+        // if this sort already active
+        if (sort.active === 'active') {
+            // toggle sort direction
+            sort.sortAsc = !sort.sortAsc;
+        }
+        else {
+            for (var i = 0; i < this.sorts.length; i++) {
+                if (this.sorts[i].id == sort.id) {
+                    this.sorts[i].active = 'active';
+                }
+                else {
+                    this.sorts[i].active = '';
+                }
+            }
+        }
     };
-    FeedPage = __decorate([
+    // hide modal
+    FiltersPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    FiltersPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-feed',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\feed\feed.html"*/'<!--\n\n  Generated template for the FeedPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Feed</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg">\n\n\n\n  <div class="button-set set-2">\n\n    <button ion-button color="primary">\n\n      Local Feed\n\n    </button>\n\n    <button ion-button color="light">\n\n      My Feed\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list class="list-no-border">\n\n\n\n    <ion-card *ngFor="let item of posts">\n\n      <div>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{item.restaurant.image}}">\n\n        </ion-avatar>\n\n        <h2>{{item.restaurant.name}}</h2>\n\n        <p>November 5, 2018</p>\n\n      </ion-item>\n\n\n\n      <ion-card-content>\n\n        <p>{{item.text}}</p>\n\n      </ion-card-content>\n\n\n\n      <img src="{{item.image}}">\n\n\n\n      <ion-row>\n\n        <ion-col>\n\n          <button ion-button icon-left clear small>\n\n            <ion-icon name="thumbs-up"></ion-icon>\n\n            <div>12 Likes</div>\n\n          </button>\n\n        </ion-col>\n\n        <ion-col>\n\n          <button ion-button icon-left clear small>\n\n            <ion-icon name="text"></ion-icon>\n\n            <div>4 Comments</div>\n\n          </button>\n\n        </ion-col>\n\n        <ion-col center text-center>\n\n          <ion-note>\n\n            11h ago\n\n          </ion-note>\n\n        </ion-col>\n\n      </ion-row>\n\n      </div>\n\n\n\n    </ion-card>\n\n    <!-- \n\n    <ion-item *ngFor="let review of reviews" text-wrap class="margin-bottom">\n\n      <div class="item-header border-bottom" (click)="viewPlace(review.place.id)">\n\n        <img src="{{ review.place.photo}}" class="pull-left item-avatar" alt="">\n\n        <div class="pull-left">\n\n          <h3>{{ review.place.name }}</h3>\n\n          <div class="secondary uppercase text-sm">{{ review.place.district }}, {{ review.place.city }}</div>\n\n        </div>\n\n        <div class="clear"></div>\n\n      </div>\n\n      <div>\n\n        <div class="item-header">\n\n          <img src="{{ review.author.profile_picture}}" class="pull-left item-avatar profile-picture" alt="">\n\n          <div class="pull-left">\n\n            <h3>{{ review.author.username }}</h3>\n\n            <div class="secondary uppercase text-sm">{{ review.author.num_reviews }} Reviews, {{\n\n              review.author.num_folowers }} Follower\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left secondary text-sm">{{ review.time }}</div>\n\n        <div class="pull-right secondary text-sm">\n\n          RATED\n\n          <span class="rating">\n\n            {{ review.rating }}\n\n          </span>\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div class="text-sm" margin-top>\n\n        {{ review.text }}\n\n      </div>\n\n\n\n      <div class="post-images">\n\n        <img *ngFor="let photo of review.photos" src="{{ photo.thumb }}">\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left action-buttons">\n\n          <ion-icon name="md-heart-outline" color="danger"  [hidden]="!review.liked"></ion-icon>\n\n          <ion-icon name="md-heart-outline" color="secondary"  [hidden]="review.liked"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="danger"  [hidden]="!review.commented"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="secondary"  [hidden]="review.commented"></ion-icon>\n\n          <ion-icon name="md-share" color="secondary" ></ion-icon>\n\n        </div>\n\n\n\n        <div class="pull-right uppercase secondary text-sm">\n\n          {{ review.num_likes }} likes &bull;\n\n          {{ review.num_comments }} comments\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n    </ion-item> -->\n\n\n\n\n\n\n\n\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\feed\feed.html"*/
+            selector: 'page-filters',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\filters\filters.html"*/'<!--\n\n  Generated template for the FiltersPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-toolbar color="primary" >\n\n  <ion-title>\n\n    Filters\n\n  </ion-title>\n\n  <ion-buttons start>\n\n    <button  ion-button (click)="dismiss()">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-buttons>\n\n  <ion-buttons end>\n\n    <button  ion-button (click)="dismiss()">\n\n      Apply\n\n    </button>\n\n  </ion-buttons>\n\n</ion-toolbar>\n\n\n\n<ion-content class=" common-bg">\n\n  <div text-center margin-top margin-bottom class="secondary">SORT BY</div>\n\n  <ion-grid class="light-bg">\n\n    <ion-row text-center>\n\n      <ion-col col-3 *ngFor="let sort of sorts" [class]="sort.active" (click)="chooseSort(sort)">\n\n        <ion-icon name="{{ sort.icon }}" class="text-lg"></ion-icon>\n\n        <ion-icon name="ios-arrow-round-up" class="text-lg" [hidden]="!sort.sortDirection || !sort.sortAsc"></ion-icon>\n\n        <ion-icon name="ios-arrow-round-down" class="text-lg" [hidden]="!sort.sortDirection || sort.sortAsc"></ion-icon>\n\n        <div>{{ sort.name }}</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n  <div text-center margin-top margin-bottom class="secondary">QUICK FILTERS</div>\n\n  <ion-grid class="light-bg">\n\n    <ion-row text-center>\n\n      <ion-col>\n\n        <ion-checkbox color="secondary"  checked="true"></ion-checkbox>\n\n        <div>Open now</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n        <div>Rate 3.5+</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n        <div>Bookmarked</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n\n\n  <div text-center margin-top margin-bottom class="secondary">COST</div>\n\n  <ion-grid class="light-bg">\n\n    <ion-row text-center>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>0-10</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>10-20</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>20-30</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-icon name="logo-usd"></ion-icon>\n\n        <div>30+</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n  <div text-center margin-top margin-bottom class="secondary">MORE FIlTERS</div>\n\n  <ion-list padding-bottom class="text-light">\n\n\n\n    <ion-item>\n\n      <ion-label>Online booking</ion-label>\n\n      <ion-checkbox color="secondary"  checked="true"></ion-checkbox>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label>Creadit cards</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Happy hours</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Wifi</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Alcohol served</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Sport bars</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label>Live music</ion-label>\n\n      <ion-checkbox color="secondary"  checked="false"></ion-checkbox>\n\n    </ion-item>\n\n\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\filters\filters.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]])
-    ], FeedPage);
-    return FeedPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
+    ], FiltersPage);
+    return FiltersPage;
 }());
 
-//# sourceMappingURL=feed.js.map
+//# sourceMappingURL=filters.js.map
 
 /***/ })
 

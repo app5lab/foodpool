@@ -13,5 +13,17 @@ import {NavController, IonicPage} from 'ionic-angular';
   templateUrl: 'account.html'
 })
 export class AccountPage {
-  constructor(public nav: NavController) {}
+  public user: any;
+  
+  constructor(public nav: NavController) {
+    
+    this.user = JSON.parse(localStorage.getItem('user'));
+    console.log(this.user);
+  }
+
+  logout() {
+    localStorage.removeItem('user');
+
+    this.nav.setRoot('LoginPage');
+  }
 }

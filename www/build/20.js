@@ -1,14 +1,14 @@
 webpackJsonp([20],{
 
-/***/ 282:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartviewPageModule", function() { return CartviewPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckoutPageModule", function() { return CheckoutPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cartview__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkout__ = __webpack_require__(311);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CartviewPageModule = (function () {
-    function CartviewPageModule() {
+var CheckoutPageModule = (function () {
+    function CheckoutPageModule() {
     }
-    CartviewPageModule = __decorate([
+    CheckoutPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cartview__["a" /* CartviewPage */],
+                __WEBPACK_IMPORTED_MODULE_2__checkout__["a" /* CheckoutPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cartview__["a" /* CartviewPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__checkout__["a" /* CheckoutPage */]),
             ],
         })
-    ], CartviewPageModule);
-    return CartviewPageModule;
+    ], CheckoutPageModule);
+    return CheckoutPageModule;
 }());
 
-//# sourceMappingURL=cartview.module.js.map
+//# sourceMappingURL=checkout.module.js.map
 
 /***/ }),
 
-/***/ 306:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartviewPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckoutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,36 +57,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the CartviewPage page.
+ * Generated class for the CheckoutPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CartviewPage = (function () {
-    function CartviewPage(navCtrl, navParams) {
+var CheckoutPage = (function () {
+    function CheckoutPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.items = [];
-        this.tot = 0;
+        this.test = "";
     }
-    CartviewPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CartviewPage');
-        this.items = JSON.parse(localStorage.getItem('cart'));
-        this.tot = localStorage.getItem('total_price');
+    CheckoutPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CheckoutPage');
     };
-    CartviewPage.prototype.checkoutt = function () {
-        this.navCtrl.push('CheckoutPage');
+    CheckoutPage.prototype.myCallbackFunction = function (_params) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.test = _params;
+            console.log(_this.test);
+            resolve();
+        });
     };
-    CartviewPage = __decorate([
+    CheckoutPage.prototype.map = function () {
+        this.navCtrl.push('MapPage', { callback: this.myCallbackFunction.bind(this) });
+    };
+    CheckoutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cartview',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/'<ion-header>\n\n	<ion-navbar color="primary">\n\n	  <ion-title>Cart</ion-title>\n\n	</ion-navbar>\n\n  </ion-header>\n\n\n\n\n\n\n\n<ion-content style="margin-top:5%; padding-top:10%; padding-bottom:30px">\n\n  <div >\n\n    <ion-list >\n\n      <ion-item *ngFor="let item of items">\n\n     <ion-grid>\n\n       <ion-row align-items-center>\n\n         <ion-col col-10>\n\n            <h2 style="padding-top:10px">\n\n                {{item.name}}\n\n              </h2>\n\n              <h6>\n\n                Rs.{{item.variation_price}}\n\n              </h6>\n\n         </ion-col>\n\n         <ion-col>\n\n            <h3 id="qty">x{{item.qty}}</h3>\n\n         </ion-col>\n\n       </ion-row>\n\n       \n\n     </ion-grid>\n\n        \n\n            \n\n      </ion-item>\n\n    \n\n     \n\n</ion-list>\n\n</div>\n\n<div padding style="width:100%;display:flex;">\n\n  \n\n  <h1 style="width:40%">  \n\n    Total Price \n\n  </h1>\n\n  <h1 style="width:50%;text-align:right;margin:0;">\n\n    <b>{{tot}}</b>  \n\n  </h1>\n\n  \n\n</div>\n\n<ion-item style="padding-bottom:5%">\n\n    <ion-icon item-start name="basket"></ion-icon>\n\n	<h4>NET20 (20% off)</h4>\n\n\n\n	<button ion-button clear item-end>View</button>\n\n</ion-item>\n\n\n\n\n\n</ion-content>\n\n\n\n\n\n  <ion-footer  >\n\n	<ion-toolbar  color="primary"  (click)="checkoutt()">\n\n	  <ion-title  style="color:white;" >Proceed to checkout</ion-title>\n\n	</ion-toolbar>\n\n  </ion-footer>'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\cartview\cartview.html"*/,
+            selector: 'page-checkout',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\checkout\checkout.html"*/'<!--\n\n  Generated template for the CheckoutPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n    <ion-navbar color="primary">\n\n      <ion-title>Checkout</ion-title>\n\n    </ion-navbar>\n\n    </ion-header>\n\n\n\n\n\n<ion-content padding class="outer-content">\n\n\n\n    \n\n        \n\n        <ion-item>\n\n          <ion-label  floating>Contact info \n\n          </ion-label>\n\n          <ion-input type="text" value="Please Enter Contact info" ></ion-input>\n\n        </ion-item>\n\n        \n\n      <div (click)="map()">\n\n        <ion-item >\n\n          <ion-label  floating>Delivery address\n\n          </ion-label>\n\n          <ion-input type="text" value={{test}} disabled ></ion-input>\n\n        </ion-item>\n\n      </div>\n\n\n\n        <ion-item>\n\n          <ion-label  floating>Deliver time\n\n          </ion-label>\n\n          <ion-input type="text" value="ASAP (50min)"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label  floating>Payment\n\n           </ion-label>\n\n          <ion-input type="text" value="Please Select Payment Method"></ion-input> \n\n        </ion-item>\n\n \n\n</ion-content>\n\n\n\n<ion-footer  >\n\n    <ion-toolbar  color="primary" >\n\n      <ion-title  style="color:white;" >Place Order</ion-title>\n\n    </ion-toolbar>\n\n    </ion-footer>'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\checkout\checkout.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], CartviewPage);
-    return CartviewPage;
+    ], CheckoutPage);
+    return CheckoutPage;
 }());
 
-//# sourceMappingURL=cartview.js.map
+//# sourceMappingURL=checkout.js.map
 
 /***/ })
 

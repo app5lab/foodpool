@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 300:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectLocationPageModule", function() { return SelectLocationPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpPageModule", function() { return SignUpPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_location__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up__ = __webpack_require__(328);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,32 +18,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SelectLocationPageModule = (function () {
-    function SelectLocationPageModule() {
+var SignUpPageModule = (function () {
+    function SignUpPageModule() {
     }
-    SelectLocationPageModule = __decorate([
+    SignUpPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__select_location__["a" /* SelectLocationPage */],
+                __WEBPACK_IMPORTED_MODULE_2__sign_up__["a" /* SignUpPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_location__["a" /* SelectLocationPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_up__["a" /* SignUpPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__select_location__["a" /* SelectLocationPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__sign_up__["a" /* SignUpPage */]]
         })
-    ], SelectLocationPageModule);
-    return SelectLocationPageModule;
+    ], SignUpPageModule);
+    return SignUpPageModule;
 }());
 
-//# sourceMappingURL=select-location.module.js.map
+//# sourceMappingURL=sign-up.module.js.map
 
 /***/ }),
 
-/***/ 324:
+/***/ 328:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectLocationPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignUpPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -63,26 +63,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var SelectLocationPage = (function () {
-    function SelectLocationPage(nav) {
+var SignUpPage = (function () {
+    function SignUpPage(nav) {
         this.nav = nav;
-        this.searches = [
-            {
-                id: 1,
-                name: "New York City, NY, USA"
-            }
-        ];
     }
-    SelectLocationPage = __decorate([
+    // go to forgot password page
+    SignUpPage.prototype.forgotPwd = function () {
+        this.nav.push('ForgotPasswordPage');
+    };
+    // process sign up
+    SignUpPage.prototype.signUp = function () {
+        // add our sign up code here
+        this.nav.push('MainTabsPage');
+    };
+    SignUpPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-select-location',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\select-location\select-location.html"*/'<!--\n\n  Generated template for the SelectLocationPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Select Location</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div padding class="common-bg">\n\n    Auto-detect current location\n\n    <ion-icon class="pull-right" ios="ios-locate-outline" md="md-locate"></ion-icon>\n\n  </div>\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Start typing your locations..."></ion-input>\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    RECENT SEARCHES\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\select-location\select-location.html"*/
+            selector: 'page-sign-up',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\sign-up\sign-up.html"*/'<!--\n\n  Generated template for the SignUpPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="secondary" >\n\n    <ion-title>SignUp</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="sign-up">\n\n  <button  ion-button color="facebook" block class="margin-bottom">Sign up via Facebook</button>\n\n  <button  ion-button color="googleplus" block class="margin-top">Sign up Google+</button>\n\n\n\n  <div text-center class="margin-top-20 secondary">OR SIGN UP USING EMAIL</div>\n\n\n\n  <ion-list class="list-form">\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Name"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Email or username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button  ion-button color="secondary"  block (click)="signUp()">SIGN UP</button>\n\n\n\n  <div text-center class="margin-top-20 secondary" (click)="forgotPwd()">Forgot password?</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\sign-up\sign-up.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], SelectLocationPage);
-    return SelectLocationPage;
+    ], SignUpPage);
+    return SignUpPage;
 }());
 
-//# sourceMappingURL=select-location.js.map
+//# sourceMappingURL=sign-up.js.map
 
 /***/ })
 

@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 299:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchPageModule", function() { return SearchPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectLocationPageModule", function() { return SelectLocationPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_location__ = __webpack_require__(327);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,32 +18,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SearchPageModule = (function () {
-    function SearchPageModule() {
+var SelectLocationPageModule = (function () {
+    function SelectLocationPageModule() {
     }
-    SearchPageModule = __decorate([
+    SelectLocationPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */],
+                __WEBPACK_IMPORTED_MODULE_2__select_location__["a" /* SelectLocationPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_location__["a" /* SelectLocationPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__select_location__["a" /* SelectLocationPage */]]
         })
-    ], SearchPageModule);
-    return SearchPageModule;
+    ], SelectLocationPageModule);
+    return SelectLocationPageModule;
 }());
 
-//# sourceMappingURL=search.module.js.map
+//# sourceMappingURL=select-location.module.js.map
 
 /***/ }),
 
-/***/ 323:
+/***/ 327:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectLocationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -63,8 +63,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var SearchPage = (function () {
-    function SearchPage(nav) {
+var SelectLocationPage = (function () {
+    function SelectLocationPage(nav) {
         this.nav = nav;
         this.searches = [
             {
@@ -73,16 +73,16 @@ var SearchPage = (function () {
             }
         ];
     }
-    SearchPage = __decorate([
+    SelectLocationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-search',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\search\search.html"*/'<!--\n\n  Generated template for the SearchPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Search</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Restaurant, cuisine or dish..."></ion-input>\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    SUGGESTIONS\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    RECENT SEARCHES\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\search\search.html"*/
+            selector: 'page-select-location',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\select-location\select-location.html"*/'<!--\n\n  Generated template for the SelectLocationPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Select Location</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div padding class="common-bg">\n\n    Auto-detect current location\n\n    <ion-icon class="pull-right" ios="ios-locate-outline" md="md-locate"></ion-icon>\n\n  </div>\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Start typing your locations..."></ion-input>\n\n  </div>\n\n\n\n  <div class="common-bg secondary" padding>\n\n    RECENT SEARCHES\n\n  </div>\n\n\n\n  <div *ngFor="let search of searches" padding>\n\n    {{ search.name }}\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\select-location\select-location.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], SearchPage);
-    return SearchPage;
+    ], SelectLocationPage);
+    return SelectLocationPage;
 }());
 
-//# sourceMappingURL=search.js.map
+//# sourceMappingURL=select-location.js.map
 
 /***/ })
 

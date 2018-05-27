@@ -17,6 +17,7 @@ import {ReviewService} from '../../services/review-service';
   templateUrl: 'feed.html'
 })
 export class FeedPage {
+  ionicColor: string;
   public reviews: any;
   public posts: any;
 
@@ -31,5 +32,8 @@ export class FeedPage {
   // view a place
   viewPlace(id) {
     this.nav.push('PlaceDetailPage', {id: id});
+  }
+  togg(){
+    this.ionicColor="primary";
   }
 }

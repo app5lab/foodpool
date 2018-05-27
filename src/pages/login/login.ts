@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, IonicPage} from 'ionic-angular';
+import {NavController, IonicPage, ToastController} from 'ionic-angular';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { Http, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
@@ -19,30 +19,52 @@ import { Headers } from '@angular/http';
 })
 export class LoginPage {
   userData: any;
-  constructor( public nav: NavController, private facebook: Facebook, private http: Http, public hp : HTTP, public alert: AlertController) {}
+  constructor( public nav: NavController, public toast: ToastController, private facebook: Facebook, private http: Http, public hp : HTTP, public alert: AlertController) {}
   // go to forgot password page
   forgotPwd() {
     this.nav.push('ForgotPasswordPage');
   }
 
   user: any = {
-    "username": "liam_349@berry.io",
-    "password": "123456"
+    "username": "",
+    "password": ""
   }
   login_via_email() {
     let headers = new Headers( { 'Content-Type': 'application/json' } );
     let options = new RequestOptions( { withCredentials: true , headers: headers } );
-    
+    this.user = {
+      username: this.user.email,
+      password: this.user.password
+    }
+
     this.http.post('http://localhost:3000/users/auth', this.user,options).subscribe(res => {
-      console.log(res)
+      localStorage.removeItem('user');
+
       if(res.json().id != null)
       {
+        localStorage.setItem('user', JSON.stringify(res.json()))
+        
         this.nav.setRoot('MainTabsPage')
       }
       else{
-        this.alert.create({title:res.json().error,buttons:[{text:'OK'}]}).present()
+        let errConfig = {  
+        message: 'Error loging in',
+        duration: 3000,
+        position: 'top'
+      };
+        let t = this.toast.create(errConfig);
+        t.present();
       }
-    }, err => console.log(err,'sdfghj'))
+    }, err => {
+      let errConfig = {  
+        message: 'Error loging in',
+        duration: 3000,
+        position: 'top'
+      };
+        let t = this.toast.create(errConfig);
+        t.present();
+
+    })
   } 
   // process login
   fblogin ()

@@ -1,14 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 291:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPageModule", function() { return MapPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(326);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MapPageModule = (function () {
-    function MapPageModule() {
+var MenuPageModule = (function () {
+    function MenuPageModule() {
     }
-    MapPageModule = __decorate([
+    MenuPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */],
+                __WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */]]
         })
-    ], MapPageModule);
-    return MapPageModule;
+    ], MenuPageModule);
+    return MenuPageModule;
 }());
 
-//# sourceMappingURL=map.module.js.map
+//# sourceMappingURL=menu.module.js.map
 
 /***/ }),
 
-/***/ 315:
+/***/ 326:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,77 +58,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /*
  Generated class for the LoginPage page.
 
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var MapPage = (function () {
-    function MapPage(nav, platform, navParams) {
+var MenuPage = (function () {
+    function MenuPage(nav, placeService) {
         this.nav = nav;
-        this.platform = platform;
-        this.navParams = navParams;
+        this.placeService = placeService;
+        // get first place for example
+        this.place = placeService.getItem(1);
     }
-    MapPage.prototype.ionViewDidLoad = function () {
-        // init map
-        this.initializeMap();
+    MenuPage.prototype.add = function (item) {
+        console.log(item);
+        item.qty = item.qty + 1;
     };
-    MapPage.prototype.initializeMap = function () {
-        var minZoomLevel = 19;
-        var myLatLng = { lat: 31.420671, lng: 74.182747 };
-        this.map = new google.maps.Map(document.getElementById('map_canvas'), {
-            zoom: minZoomLevel,
-            center: new google.maps.LatLng(myLatLng.lat, myLatLng.lng),
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI: true
-        });
-    };
-    MapPage.prototype.ionViewWillEnter = function () {
-        this.callback = this.navParams.get("callback");
-    };
-    MapPage.prototype.get = function () {
-        console.log(this.map.getCenter().lat(), this.map.getCenter().lng());
-        var geocoder = new google.maps.Geocoder;
-        var infowindow = new google.maps.InfoWindow;
-        this.geocodeLatLng(geocoder, this.map);
-    };
-    MapPage.prototype.geocodeLatLng = function (geocoder, map) {
-        var that = this;
-        var latlng = { lat: parseFloat(this.map.getCenter().lat()), lng: parseFloat(this.map.getCenter().lng()) };
-        geocoder.geocode({ 'location': latlng }, function (results, status) {
-            if (status === 'OK') {
-                if (results[0]) {
-                    // map.setZoom(11);
-                    // var marker = new google.maps.Marker({
-                    // position: latlng,
-                    // map: map
-                    // });
-                    that.callback(results[0].formatted_address).then(function () {
-                        that.nav.pop();
-                    });
-                    // infowindow.setContent(results[0].formatted_address);
-                    // infowindow.open(map, marker);
-                }
-                else {
-                    window.alert('No results found');
-                }
-            }
-            else {
-                window.alert('Geocoder failed due to: ' + status);
-            }
-        });
-    };
-    MapPage = __decorate([
+    MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-map',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/'<!--\n\n  Generated template for the MapPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Map</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas">\n\n  </div>\n\n    <ion-icon name="pin" class="cross"></ion-icon>\n\n\n\n\n\n    <ion-fab right bottom #fab2>\n\n      <button ion-fab color="danger" (click) = "get()" ><ion-icon name="md-checkmark"></ion-icon></button> \n\n    </ion-fab>    \n\n    \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\map\map.html"*/
+            selector: 'page-menu',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\menu\menu.html"*/'<!--\n\n  Generated template for the MenuPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <ion-item-group *ngFor="let category of place.menu">\n\n\n\n    <ion-item-divider bgColor class="strong uppercase">{{ category.name }}</ion-item-divider>\n\n    <ion-item *ngFor="let item of category.items" (click)="add(item)">\n\n      <span>{{ item.name }}</span>\n\n      <span class="badge" *ngIf="item.qty != 0">\n\n        <ion-badge item-end>{{item.qty}}</ion-badge>\n\n      </span>\n\n      <span class="pull-right">{{ item.price | currency:\'USD\':true }}</span>\n\n      <button ion-button color="primary" class="pull-down custom">Customize</button>        \n\n    </ion-item>\n\n  </ion-item-group>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\menu\menu.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], MapPage);
-    return MapPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
+    ], MenuPage);
+    return MenuPage;
 }());
 
-//# sourceMappingURL=map.js.map
+//# sourceMappingURL=menu.js.map
 
 /***/ })
 

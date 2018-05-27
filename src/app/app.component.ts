@@ -16,7 +16,6 @@ export class MyApp {
 
   public rootPage:any;
   ngOnInit() {
-    console.log( localStorage )
     if ( !( localStorage.getItem( 'is_logged_in' ) == "true" ) )
     {
       this.nav.setRoot( 'LoginPage' )
@@ -26,8 +25,8 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     
     
-    //  this.rootPage = MainTabsPage;
-
+   //this.rootPage = 'PoolPage';
+    
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

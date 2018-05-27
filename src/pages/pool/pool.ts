@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, ModalController } from 'ionic-angular';
 import {PlaceService} from '../../services/place-service';
 
-import { Http, RequestOptions,Headers } from '@angular/http';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
-import { HTTP } from '@ionic-native/http'
+
+
+import { PoolProvider } from '../../providers/pool/pool';
+
 /**
  * Generated class for the PoolPage page.
  *
@@ -18,76 +20,57 @@ import { HTTP } from '@ionic-native/http'
   templateUrl: 'pool.html',
 })
 export class PoolPage {
-  public currentLocation = 'Lahore, Pakistan';
+  public my_pools: any;
+  public available_pools: any;
 
-  public slides = [
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,  
+              public placeService: PlaceService, 
+              public app: App, 
+              public alert: AlertController, 
+              public poolProvider: PoolProvider,
+              public modal: ModalController
+            ) 
     {
-      src: 'assets/img/bugger.jpg'
-    },
-    {
-      src: 'assets/img/drink.jpg'
-    },
-    {
-      src: 'assets/img/entree.jpg'
+      this.updateAvaialblePools();    
+      this.updateMyPools();
     }
-  ];
-  user: any = {
-    "username": "liam_349@berry.io",
-    "password": "123456"
-  }
-  public popularPlaces: any;
-  public restaurants: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public placeService: PlaceService, public app: App, private http: Http, public alert: AlertController, hg: RequestOptions, hp: HTTP) {
-   let headers = new Headers( { 'Content-Type': 'application/json' } )
-    let options = new RequestOptions( { withCredentials: true, headers: headers } )
 
-    this.http.post('http://localhost:3000/query', {query: "SELECT * FROM foodpool.pool;" },options).subscribe(res => {
-      this.restaurants;
-    }, err => console.log(err,'sdfghj'))
+  updateAvaialblePools() {
+    this.poolProvider.getAvailablePools().subscribe(
+      res => {
+        this.available_pools = res['_body'];
+        this.available_pools = JSON.parse(this.available_pools)['result']
+      },
+      err => {
+        console.log(err,'sdfghj')
+      }
+    )
   }
 
-  open_r(item){
-    this.navCtrl.push('PlaceDetailPage', {detail: item})
+  updateMyPools() {
+    this.poolProvider.getMyPools().subscribe(
+      res => {
+        this.my_pools = res['_body'];
+        this.my_pools = JSON.parse(this.my_pools)['result']
+      },
+      err => {
+        console.log(err,'sdfghj')
+      }
+    )
   }
 
-  // go to select location page
-  selectLocation() {
-    this.navCtrl.push('SelectLocationPage');
-  }
 
-  // go to places
-  viewPlaces() {
-    this.app.getRootNav().push('PlacesPage');
+  createPool() {
+    let model = this.modal.create('AddPoolPage')
+    model.onDidDismiss(data => {
+      this.updateMyPools();  
+    });
+    model.present()
   }
-
-  // view a place
-  viewPlace(id) {
-    this.app.getRootNav().push('PlaceDetailPage', {id: id});
-  }
-
-  // go to search page
-  goToSearch() {
-    this.app.getRootNav().push('SearchPage');
-  }
-
-  // go to bookmarks page
-  goToBookmarks() {
-    this.app.getRootNav().push('BookmarksPage');
-  }
-
-  // view map
-  goToMap() {
-    this.app.getRootNav().push('MapPage');
-  }
-
-  // view nearby page
-  goToNearBy() {
-    this.app.getRootNav().push('NearbyPage');
-  }
-  
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PoolPage');
-  }
+subpool(){
+  this.navCtrl.push('SubpoolPage')
+}
 
 }

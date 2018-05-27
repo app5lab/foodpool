@@ -25,14 +25,13 @@
 
 <ion-content class=" common-bg">
 
+
   
+  <!--- Available pools STARTS HERE -->
   <ion-list class="list-no-border">
-    <h1>Available pools</h1>
-
-
-
-    <ion-card *ngFor="let item of restaurants">
-      <div scroll="false" class="container" (click)="open_r(item)">
+    <h2>Available pools</h2>
+    <ion-card *ngFor="let item of available_pools" (click)="subpool()">
+      <div scroll="false" class="container">
         <div class="fill div1">
           <!-- <img src={{item.wide_image}}> -->
 
@@ -50,6 +49,7 @@
             <img src="{{item.logo_url}}">
           </ion-avatar>
           <h2>{{item.title}}</h2>
+          <h2>Persons: {{item.persons}}</h2>
           <p>{{item.timing}}</p>
         </ion-item>
   
@@ -61,7 +61,58 @@
       </div>
   
     </ion-card>
-  </ion-list>
 
+  <!--- Available pools ENDS HERE -->
+
+  <!--- MY pools STARTS HERE -->
+
+
+    <h2>My pools</h2>
+    <ion-card *ngFor="let item of my_pools">
+      <div scroll="false" class="container" (click)="subpool()">
+        <div  class="fill div1">
+          <!-- <img src={{item.wide_image}}> -->
+
+          <img  src="https://www.desi-compile.com/wp-content/uploads/2016/11/indianchat2.jpg">
+        </div>
+        <p id="only" class="div2">
+          Deals
+        </p>
+        <p id="only" class="div3">
+          45 min
+        </p>
+        <div style="height:120px;width:100%;"></div>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{item.logo_url}}">
+          </ion-avatar>
+          <h2>{{item.title}}</h2>
+          <h2>Persons: {{item.persons}}</h2>
+          <p>{{item.timing}}</p>
+        </ion-item>
+  
+        <ion-card-content>
+          <p>{{item.cuisines}}</p>
+        </ion-card-content>
+        
+ 
+      </div>
+  
+    </ion-card>
+
+  <!--- MY pools END HERE -->
+
+
+
+
+
+
+
+
+
+  </ion-list>
+  <ion-fab right bottom #fab2>
+    <button ion-fab color="danger" (click) = "createPool()" ><ion-icon name="md-checkmark"></ion-icon></button> 
+  </ion-fab>    
  
 </ion-content>

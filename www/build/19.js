@@ -1,14 +1,14 @@
 webpackJsonp([19],{
 
-/***/ 283:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckoutPageModule", function() { return CheckoutPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollectionsPageModule", function() { return CollectionsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkout__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collections__ = __webpack_require__(310);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CheckoutPageModule = (function () {
-    function CheckoutPageModule() {
+var CollectionsPageModule = (function () {
+    function CollectionsPageModule() {
     }
-    CheckoutPageModule = __decorate([
+    CollectionsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__checkout__["a" /* CheckoutPage */],
+                __WEBPACK_IMPORTED_MODULE_2__collections__["a" /* CollectionsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__checkout__["a" /* CheckoutPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__collections__["a" /* CollectionsPage */]),
             ],
+            exports: [__WEBPACK_IMPORTED_MODULE_2__collections__["a" /* CollectionsPage */]]
         })
-    ], CheckoutPageModule);
-    return CheckoutPageModule;
+    ], CollectionsPageModule);
+    return CollectionsPageModule;
 }());
 
-//# sourceMappingURL=checkout.module.js.map
+//# sourceMappingURL=collections.module.js.map
 
 /***/ }),
 
-/***/ 307:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckoutPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_collection_service__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,42 +58,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the CheckoutPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+
+/*
+ Generated class for the LoginPage page.
+
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
  */
-var CheckoutPage = (function () {
-    function CheckoutPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.test = "";
+var CollectionsPage = (function () {
+    function CollectionsPage(nav, collectionService, app) {
+        this.nav = nav;
+        this.collectionService = collectionService;
+        this.app = app;
+        // set sample data
+        this.collections = collectionService.getAll();
     }
-    CheckoutPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CheckoutPage');
+    // add bookmark
+    CollectionsPage.prototype.addBookMark = function (collection) {
+        collection.bookmarked = !collection.bookmarked;
     };
-    CheckoutPage.prototype.myCallbackFunction = function (_params) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.test = _params;
-            console.log(_this.test);
-            resolve();
-        });
+    // view a collection
+    CollectionsPage.prototype.goToCollection = function (id) {
+        this.app.getRootNav().push('PlacesPage');
     };
-    CheckoutPage.prototype.map = function () {
-        this.navCtrl.push('MapPage', { callback: this.myCallbackFunction.bind(this) });
-    };
-    CheckoutPage = __decorate([
+    CollectionsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkout',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\checkout\checkout.html"*/'<!--\n\n  Generated template for the CheckoutPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n    <ion-navbar color="primary">\n\n      <ion-title>Checkout</ion-title>\n\n    </ion-navbar>\n\n    </ion-header>\n\n\n\n\n\n<ion-content padding class="outer-content">\n\n\n\n    \n\n        \n\n        <ion-item>\n\n          <ion-label  floating>Contact info \n\n          </ion-label>\n\n          <ion-input type="text" value="Please Enter Contact info" ></ion-input>\n\n        </ion-item>\n\n        \n\n      <div (click)="map()">\n\n        <ion-item >\n\n          <ion-label  floating>Delivery address\n\n          </ion-label>\n\n          <ion-input type="text" value={{test}} disabled ></ion-input>\n\n        </ion-item>\n\n      </div>\n\n\n\n        <ion-item>\n\n          <ion-label  floating>Deliver time\n\n          </ion-label>\n\n          <ion-input type="text" value="ASAP (50min)"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-label  floating>Payment\n\n           </ion-label>\n\n          <ion-input type="text" value="Please Select Payment Method"></ion-input> \n\n        </ion-item>\n\n \n\n</ion-content>\n\n\n\n<ion-footer  >\n\n    <ion-toolbar  color="primary" >\n\n      <ion-title  style="color:white;" >Place Order</ion-title>\n\n    </ion-toolbar>\n\n    </ion-footer>'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\checkout\checkout.html"*/,
+            selector: 'page-collections',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\collections\collections.html"*/'<!--\n\n  Generated template for the CollectionsPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Collections</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="collections">\n\n  <ion-list>\n\n    <ion-item class="margin-top" *ngFor="let collection of collections"\n\n              [ngStyle]="{\'background-image\': \'url(\' + collection.background + \')\'}">\n\n      <div class="item-info">\n\n        <ion-icon class="bookmark-icon" name="bookmark" color="primary"  [hidden]="!collection.bookmarked"\n\n                  (click)="addBookMark(collection)"></ion-icon>\n\n        <ion-icon class="bookmark-icon" name="bookmark-outline" color="light"  [hidden]="collection.bookmarked"\n\n                  (click)="addBookMark(collection)"></ion-icon>\n\n        <div class="text-sm light" (click)="goToCollection(collection.id)">{{ collection.num_places }} PLACE &bull; {{\n\n          collection.num_bookmarks }} BOOKMARKS\n\n        </div>\n\n        <h3 class="light" (click)="goToCollection(collection.id)">{{ collection.name }}</h3>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\collections\collections.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], CheckoutPage);
-    return CheckoutPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_collection_service__["a" /* CollectionService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */]])
+    ], CollectionsPage);
+    return CollectionsPage;
 }());
 
-//# sourceMappingURL=checkout.js.map
+//# sourceMappingURL=collections.js.map
 
 /***/ })
 

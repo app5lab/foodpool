@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 297:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PoolPageModule", function() { return PoolPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewsPageModule", function() { return ReviewsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pool__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reviews__ = __webpack_require__(325);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,38 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PoolPageModule = (function () {
-    function PoolPageModule() {
+var ReviewsPageModule = (function () {
+    function ReviewsPageModule() {
     }
-    PoolPageModule = __decorate([
+    ReviewsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__pool__["a" /* PoolPage */],
+                __WEBPACK_IMPORTED_MODULE_2__reviews__["a" /* ReviewsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pool__["a" /* PoolPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reviews__["a" /* ReviewsPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__pool__["a" /* PoolPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__reviews__["a" /* ReviewsPage */]]
         })
-    ], PoolPageModule);
-    return PoolPageModule;
+    ], ReviewsPageModule);
+    return ReviewsPageModule;
 }());
 
-//# sourceMappingURL=pool.module.js.map
+//# sourceMappingURL=reviews.module.js.map
 
 /***/ }),
 
-/***/ 321:
+/***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PoolPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_components_alert_alert_controller__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_http__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_review_service__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,90 +59,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+/*
+ Generated class for the LoginPage page.
 
-
-
-/**
- * Generated class for the PoolPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
  */
-var PoolPage = (function () {
-    function PoolPage(navCtrl, navParams, placeService, app, http, alert, hg, hp) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.placeService = placeService;
-        this.app = app;
-        this.http = http;
-        this.alert = alert;
-        this.currentLocation = 'Lahore, Pakistan';
-        this.slides = [
-            {
-                src: 'assets/img/bugger.jpg'
-            },
-            {
-                src: 'assets/img/drink.jpg'
-            },
-            {
-                src: 'assets/img/entree.jpg'
-            }
-        ];
-        this.user = {
-            "username": "liam_349@berry.io",
-            "password": "123456"
-        };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestOptions */]({ withCredentials: true, headers: headers });
-        this.http.post('http://localhost:3000/query', { query: "SELECT * FROM foodpool.pool;" }, options).subscribe(function (res) {
-            _this.restaurants;
-        }, function (err) { return console.log(err, 'sdfghj'); });
+var ReviewsPage = (function () {
+    function ReviewsPage(nav, reviewService) {
+        this.nav = nav;
+        this.reviewService = reviewService;
+        // feed
+        this.reviews = reviewService.getAll();
     }
-    PoolPage.prototype.open_r = function (item) {
-        this.navCtrl.push('PlaceDetailPage', { detail: item });
-    };
-    // go to select location page
-    PoolPage.prototype.selectLocation = function () {
-        this.navCtrl.push('SelectLocationPage');
-    };
-    // go to places
-    PoolPage.prototype.viewPlaces = function () {
-        this.app.getRootNav().push('PlacesPage');
-    };
-    // view a place
-    PoolPage.prototype.viewPlace = function (id) {
-        this.app.getRootNav().push('PlaceDetailPage', { id: id });
-    };
-    // go to search page
-    PoolPage.prototype.goToSearch = function () {
-        this.app.getRootNav().push('SearchPage');
-    };
-    // go to bookmarks page
-    PoolPage.prototype.goToBookmarks = function () {
-        this.app.getRootNav().push('BookmarksPage');
-    };
-    // view map
-    PoolPage.prototype.goToMap = function () {
-        this.app.getRootNav().push('MapPage');
-    };
-    // view nearby page
-    PoolPage.prototype.goToNearBy = function () {
-        this.app.getRootNav().push('NearbyPage');
-    };
-    PoolPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PoolPage');
-    };
-    PoolPage = __decorate([
+    ReviewsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pool',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\pool\pool.html"*/'<!--\n\n  Generated template for the HomePage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary"  hideBackButton="true">\n\n    <button  ion-button class="nav-button" (click)="selectLocation()">\n\n      {{ currentLocation }}\n\n      <ion-icon name="ios-arrow-down" class="text-md"></ion-icon>\n\n    </button>\n\n    <ion-buttons end>\n\n      <button  ion-button (click)="goToBookmarks()">\n\n        <ion-icon name="bookmark"></ion-icon>\n\n      </button>\n\n      <button  ion-button (click)="goToSearch()">\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg">\n\n\n\n  \n\n  <ion-list class="list-no-border">\n\n    <h1>Available pools</h1>\n\n\n\n\n\n\n\n    <ion-card *ngFor="let item of restaurants">\n\n      <div scroll="false" class="container" (click)="open_r(item)">\n\n        <div class="fill div1">\n\n          <!-- <img src={{item.wide_image}}> -->\n\n\n\n          <img src="https://www.desi-compile.com/wp-content/uploads/2016/11/indianchat2.jpg">\n\n        </div>\n\n        <p id="only" class="div2">\n\n          Deals\n\n        </p>\n\n        <p id="only" class="div3">\n\n          45 min\n\n        </p>\n\n        <div style="height:120px;width:100%;"></div>\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="{{item.logo_url}}">\n\n          </ion-avatar>\n\n          <h2>{{item.title}}</h2>\n\n          <p>{{item.timing}}</p>\n\n        </ion-item>\n\n  \n\n        <ion-card-content>\n\n          <p>{{item.cuisines}}</p>\n\n        </ion-card-content>\n\n        \n\n \n\n      </div>\n\n  \n\n    </ion-card>\n\n  </ion-list>\n\n\n\n \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\pool\pool.html"*/,
+            selector: 'page-reviews',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\reviews\reviews.html"*/'<!--\n\n  Generated template for the ReviewsPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Reviews</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" feed common-bg">\n\n  <ion-list class="list-no-border">\n\n\n\n    <ion-item *ngFor="let review of reviews" text-wrap class="margin-bottom">\n\n      <div>\n\n        <div class="item-header">\n\n          <img src="{{ review.author.profile_picture}}" class="pull-left item-avatar profile-picture" alt="">\n\n          <div class="pull-left">\n\n            <h3>{{ review.author.username }}</h3>\n\n            <div class="secondary uppercase text-sm">{{ review.author.num_reviews }} Reviews, {{\n\n              review.author.num_folowers }} Follower\n\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left secondary text-sm">{{ review.time }}</div>\n\n        <div class="pull-right secondary text-sm">\n\n          RATED\n\n          <span class="rating">\n\n            {{ review.rating }}\n\n          </span>\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n      <div class="text-sm" margin-top>\n\n        {{ review.text }}\n\n      </div>\n\n\n\n      <div class="post-images">\n\n        <img *ngFor="let photo of review.photos" src="{{ photo.thumb }}">\n\n      </div>\n\n\n\n      <div>\n\n        <div class="pull-left action-buttons">\n\n          <ion-icon name="md-heart-outline" color="danger"  [hidden]="!review.liked"></ion-icon>\n\n          <ion-icon name="md-heart-outline" color="secondary"  [hidden]="review.liked"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="danger"  [hidden]="!review.commented"></ion-icon>\n\n          <ion-icon name="ios-chatboxes-outline" color="secondary"  [hidden]="review.commented"></ion-icon>\n\n          <ion-icon name="md-share" color="secondary" ></ion-icon>\n\n        </div>\n\n\n\n        <div class="pull-right uppercase secondary text-sm">\n\n          {{ review.num_likes }} likes &bull;\n\n          {{ review.num_comments }} comments\n\n        </div>\n\n\n\n        <div class="clear"></div>\n\n      </div>\n\n\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\reviews\reviews.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular_components_alert_alert_controller__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_http__["a" /* HTTP */]])
-    ], PoolPage);
-    return PoolPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]])
+    ], ReviewsPage);
+    return ReviewsPage;
 }());
 
-//# sourceMappingURL=pool.js.map
+//# sourceMappingURL=reviews.js.map
 
 /***/ })
 

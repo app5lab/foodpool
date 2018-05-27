@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 292:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NearbyPageModule", function() { return NearbyPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nearby__ = __webpack_require__(319);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MenuPageModule = (function () {
-    function MenuPageModule() {
+var NearbyPageModule = (function () {
+    function NearbyPageModule() {
     }
-    MenuPageModule = __decorate([
+    NearbyPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_2__nearby__["a" /* NearbyPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__nearby__["a" /* NearbyPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__nearby__["a" /* NearbyPage */]]
         })
-    ], MenuPageModule);
-    return MenuPageModule;
+    ], NearbyPageModule);
+    return NearbyPageModule;
 }());
 
-//# sourceMappingURL=menu.module.js.map
+//# sourceMappingURL=nearby.module.js.map
 
 /***/ }),
 
-/***/ 316:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NearbyPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(194);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,34 +57,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 /*
  Generated class for the LoginPage page.
 
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var MenuPage = (function () {
-    function MenuPage(nav, placeService) {
+var NearbyPage = (function () {
+    function NearbyPage(nav, platform) {
         this.nav = nav;
-        this.placeService = placeService;
-        // get first place for example
-        this.place = placeService.getItem(1);
+        this.platform = platform;
     }
-    MenuPage.prototype.add = function (item) {
-        console.log(item);
-        item.qty = item.qty + 1;
+    NearbyPage.prototype.ionViewDidLoad = function () {
+        // init map
+        this.initializeMap();
     };
-    MenuPage = __decorate([
+    NearbyPage.prototype.initializeMap = function () {
+        var minZoomLevel = 18;
+        this.map = new google.maps.Map(document.getElementById('map_canvas'), {
+            zoom: minZoomLevel,
+            center: new google.maps.LatLng(31.451101, 74.291664),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+    };
+    NearbyPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\menu\menu.html"*/'<!--\n\n  Generated template for the MenuPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <ion-item-group *ngFor="let category of place.menu">\n\n\n\n    <ion-item-divider bgColor class="strong uppercase">{{ category.name }}</ion-item-divider>\n\n    <ion-item *ngFor="let item of category.items" (click)="add(item)">\n\n      <span>{{ item.name }}</span>\n\n      <span class="badge" *ngIf="item.qty != 0">\n\n        <ion-badge item-end>{{item.qty}}</ion-badge>\n\n      </span>\n\n      <span class="pull-right">{{ item.price | currency:\'USD\':true }}</span>\n\n      <button ion-button color="primary" class="pull-down custom">Customize</button>        \n\n    </ion-item>\n\n  </ion-item-group>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\menu\menu.html"*/
+            selector: 'page-nearby',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\nearby\nearby.html"*/'<!--\n\n  Generated template for the NearbyPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n	<ion-navbar color="primary" >\n\n	  <ion-title>Nearby</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div id="map_canvas"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\nearby\nearby.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
-    ], MenuPage);
-    return MenuPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]])
+    ], NearbyPage);
+    return NearbyPage;
 }());
 
-//# sourceMappingURL=menu.js.map
+//# sourceMappingURL=nearby.js.map
 
 /***/ })
 

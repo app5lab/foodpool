@@ -12,16 +12,15 @@
 
 <ion-content class=" common-bg">
 
-  <div class="button-set set-2">
-    <button ion-button color="primary">
-      Local Feed
-    </button>
-    <button ion-button color="light">
-      My Feed
-    </button>
-  </div>
-
-  <ion-list class="list-no-border">
+    <div class="button-set set-2">
+      <button ion-button  color="primary">
+        Local Feed
+      </button>
+      <button ion-button color="light">
+        My Feed
+      </button>
+    </div>
+    <ion-list class="list-no-border">
 
     <ion-card *ngFor="let item of posts">
       <div>
@@ -38,7 +37,6 @@
       </ion-card-content>
 
       <img src="{{item.image}}">
-
       <ion-row>
         <ion-col>
           <button ion-button icon-left clear small>
@@ -59,8 +57,8 @@
         </ion-col>
       </ion-row>
       </div>
-
     </ion-card>
+    
     <!-- 
     <ion-item *ngFor="let review of reviews" text-wrap class="margin-bottom">
       <div class="item-header border-bottom" (click)="viewPlace(review.place.id)">

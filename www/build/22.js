@@ -1,14 +1,14 @@
 webpackJsonp([22],{
 
-/***/ 280:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddReviewPageModule", function() { return AddReviewPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookmarksPageModule", function() { return BookmarksPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_review__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bookmarks__ = __webpack_require__(309);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddReviewPageModule = (function () {
-    function AddReviewPageModule() {
+var BookmarksPageModule = (function () {
+    function BookmarksPageModule() {
     }
-    AddReviewPageModule = __decorate([
+    BookmarksPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__add_review__["a" /* AddReviewPage */],
+                __WEBPACK_IMPORTED_MODULE_2__bookmarks__["a" /* BookmarksPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_review__["a" /* AddReviewPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__bookmarks__["a" /* BookmarksPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__add_review__["a" /* AddReviewPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__bookmarks__["a" /* BookmarksPage */]]
         })
-    ], AddReviewPageModule);
-    return AddReviewPageModule;
+    ], BookmarksPageModule);
+    return BookmarksPageModule;
 }());
 
-//# sourceMappingURL=add-review.module.js.map
+//# sourceMappingURL=bookmarks.module.js.map
 
 /***/ }),
 
-/***/ 304:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddReviewPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BookmarksPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,26 +58,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /*
  Generated class for the LoginPage page.
 
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var AddReviewPage = (function () {
-    function AddReviewPage(nav) {
+var BookmarksPage = (function () {
+    function BookmarksPage(nav, placeService) {
         this.nav = nav;
+        this.placeService = placeService;
+        this.places = placeService.getAll();
     }
-    AddReviewPage = __decorate([
+    // view a place
+    BookmarksPage.prototype.viewPlace = function (id) {
+        this.nav.push('PlaceDetailPage', { id: id });
+    };
+    BookmarksPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-review',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\add-review\add-review.html"*/'<!--\n\n  Generated template for the AddReviewPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n	<ion-navbar>\n\n	  <ion-title>AddReview</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="add-review">\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\add-review\add-review.html"*/
+            selector: 'page-bookmarks',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\bookmarks\bookmarks.html"*/'<!--\n\n  Generated template for the BookmarksPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary" >\n\n    <ion-title>Bookmarks</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="bookmarks">\n\n\n\n  <div class="search-form">\n\n    <ion-icon name="ios-search"></ion-icon>\n\n    <ion-input type="text" placeholder="Type to filter by location"></ion-input>\n\n  </div>\n\n\n\n  <!-- list of places -->\n\n  <ion-list class="list-full-border">\n\n    <ion-item *ngFor="let place of places">\n\n      <ion-avatar item-left>\n\n        <img src="{{ place.photos[0].thumb }}">\n\n      </ion-avatar>\n\n\n\n      <div>\n\n        <div>{{ place.name }}</div>\n\n        <div class="secondary uppercase text-sm">{{ place.district }}, {{ place.city }}</div>\n\n      </div>\n\n\n\n      <ion-icon name="call" color="favorite"  item-right></ion-icon>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\bookmarks\bookmarks.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], AddReviewPage);
-    return AddReviewPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */]])
+    ], BookmarksPage);
+    return BookmarksPage;
 }());
 
-//# sourceMappingURL=add-review.js.map
+//# sourceMappingURL=bookmarks.js.map
 
 /***/ })
 

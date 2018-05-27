@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 301:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpPageModule", function() { return SignUpPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubpoolPageModule", function() { return SubpoolPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subpool__ = __webpack_require__(329);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,32 +18,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SignUpPageModule = (function () {
-    function SignUpPageModule() {
+var SubpoolPageModule = (function () {
+    function SubpoolPageModule() {
     }
-    SignUpPageModule = __decorate([
+    SubpoolPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__sign_up__["a" /* SignUpPage */],
+                __WEBPACK_IMPORTED_MODULE_2__subpool__["a" /* SubpoolPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_up__["a" /* SignUpPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__subpool__["a" /* SubpoolPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__sign_up__["a" /* SignUpPage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__subpool__["a" /* SubpoolPage */]]
         })
-    ], SignUpPageModule);
-    return SignUpPageModule;
+    ], SubpoolPageModule);
+    return SubpoolPageModule;
 }());
 
-//# sourceMappingURL=sign-up.module.js.map
+//# sourceMappingURL=subpool.module.js.map
 
 /***/ }),
 
-/***/ 325:
+/***/ 329:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignUpPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubpoolPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,35 +57,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/*
- Generated class for the LoginPage page.
-
- See http://ionicframework.com/docs/v2/components/#navigation for more info on
- Ionic pages and navigation.
+/**
+ * Generated class for the SubpoolPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
  */
-var SignUpPage = (function () {
-    function SignUpPage(nav) {
-        this.nav = nav;
+var SubpoolPage = (function () {
+    function SubpoolPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
     }
-    // go to forgot password page
-    SignUpPage.prototype.forgotPwd = function () {
-        this.nav.push('ForgotPasswordPage');
+    SubpoolPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SubpoolPage');
     };
-    // process sign up
-    SignUpPage.prototype.signUp = function () {
-        // add our sign up code here
-        this.nav.push('MainTabsPage');
-    };
-    SignUpPage = __decorate([
+    SubpoolPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sign-up',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\sign-up\sign-up.html"*/'<!--\n\n  Generated template for the SignUpPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="secondary" >\n\n    <ion-title>SignUp</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="sign-up">\n\n  <button  ion-button color="facebook" block class="margin-bottom">Sign up via Facebook</button>\n\n  <button  ion-button color="googleplus" block class="margin-top">Sign up Google+</button>\n\n\n\n  <div text-center class="margin-top-20 secondary">OR SIGN UP USING EMAIL</div>\n\n\n\n  <ion-list class="list-form">\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Name"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Email or username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button  ion-button color="secondary"  block (click)="signUp()">SIGN UP</button>\n\n\n\n  <div text-center class="margin-top-20 secondary" (click)="forgotPwd()">Forgot password?</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\sign-up\sign-up.html"*/
+            selector: 'page-subpool',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\subpool\subpool.html"*/'<!--\n\n  Generated template for the SubpoolPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>subpool</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-card>\n\n\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="assets/img/user/mike.png">\n\n          </ion-avatar>\n\n          <h2>New Pizza</h2>\n\n          \n\n        </ion-item>\n\n      \n\n        <img src="https://www.desi-compile.com/wp-content/uploads/2016/11/indianchat2.jpg">\n\n      \n\n        <ion-card-content>\n\n          <p>BBQ Pizza</p>\n\n        </ion-card-content>\n\n        <ion-row>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>Total Price:</ion-label>\n\n                    <ion-label>Rs 750/-</ion-label>\n\n                   \n\n                  </ion-item>\n\n            </ion-col>\n\n         </ion-row>\n\n\n\n         <ion-row>\n\n          <ion-col>\n\n              <ion-item>\n\n                  <ion-label>No of persons:</ion-label>\n\n                  <ion-label>5</ion-label>\n\n                 \n\n                </ion-item>\n\n          </ion-col>\n\n         </ion-row>\n\n\n\n         <ion-row>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>Per Person:</ion-label>\n\n                    <ion-label>Rs 150/-</ion-label>\n\n                   \n\n                  </ion-item>\n\n            </ion-col>\n\n         </ion-row>\n\n\n\n          <ion-row>\n\n              <ion-col>\n\n                  <ion-item>\n\n                      <ion-label>Items in deal:</ion-label>\n\n                      <ion-label>5</ion-label>\n\n                     \n\n                    </ion-item>\n\n              </ion-col>\n\n         </ion-row>\n\n\n\n         \n\n         <ion-row>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>Distribution:</ion-label>\n\n                    <ion-label>1 item/person</ion-label>\n\n                   \n\n                  </ion-item>\n\n            </ion-col>\n\n       </ion-row>\n\n       <p style="margin-left:30%">\n\n          <button ion-button color="danger" medium>Confirm Deal</button>\n\n      </p>\n\n\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\subpool\subpool.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], SignUpPage);
-    return SignUpPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], SubpoolPage);
+    return SubpoolPage;
 }());
 
-//# sourceMappingURL=sign-up.js.map
+//# sourceMappingURL=subpool.js.map
 
 /***/ })
 

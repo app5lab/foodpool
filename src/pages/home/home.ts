@@ -39,11 +39,14 @@ export class HomePage {
   public popularPlaces: any;
   public restaurants: any;
 
+
   constructor( public nav: NavController, public placeService: PlaceService, public app: App, private http: Http, public alert: AlertController, hg: RequestOptions, hp: HTTP) {
     //this.popularPlaces = placeService.getAll();
 
     let headers = new Headers( { 'Content-Type': 'application/json' } )
     let options = new RequestOptions( { withCredentials: true, headers: headers } )
+ 
+    
     
     http.get( 'http://localhost:3000/feed',options).subscribe( res =>
     {

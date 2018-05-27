@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 288:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(316);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,38 +18,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomePageModule = (function () {
-    function HomePageModule() {
+var LoginPageModule = (function () {
+    function LoginPageModule() {
     }
-    HomePageModule = __decorate([
+    LoginPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]]
         })
-    ], HomePageModule);
-    return HomePageModule;
+    ], LoginPageModule);
+    return LoginPageModule;
 }());
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 312:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_place_service__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_components_alert_alert_controller__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_http__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_facebook__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_components_alert_alert_controller__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_http__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,84 +65,115 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /*
  Generated class for the LoginPage page.
 
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-var HomePage = (function () {
-    function HomePage(nav, placeService, app, http, alert, hg, hp) {
-        //this.popularPlaces = placeService.getAll();
-        var _this = this;
+var LoginPage = (function () {
+    function LoginPage(nav, toast, facebook, http, hp, alert) {
         this.nav = nav;
-        this.placeService = placeService;
-        this.app = app;
+        this.toast = toast;
+        this.facebook = facebook;
         this.http = http;
+        this.hp = hp;
         this.alert = alert;
-        // current location
-        this.currentLocation = 'Lahore, Pakistan';
-        // list slides for slider
-        this.slides = [
-            {
-                src: 'assets/img/bugger.jpg'
-            },
-            {
-                src: 'assets/img/drink.jpg'
-            },
-            {
-                src: 'assets/img/entree.jpg'
-            }
-        ];
+        this.user = {
+            "username": "",
+            "password": ""
+        };
+    }
+    // go to forgot password page
+    LoginPage.prototype.forgotPwd = function () {
+        this.nav.push('ForgotPasswordPage');
+    };
+    LoginPage.prototype.login_via_email = function () {
+        var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestOptions */]({ withCredentials: true, headers: headers });
-        http.get('http://localhost:3000/feed', options).subscribe(function (res) {
-            console.log(res);
-            console.log(res.json());
-            _this.restaurants = res.json();
-        }, function (err) { return console.log(err); });
-    }
-    HomePage.prototype.open_r = function (item) {
-        this.nav.push('PlaceDetailPage', { detail: item });
+        this.user = {
+            username: this.user.email,
+            password: this.user.password
+        };
+        this.http.post('http://localhost:3000/users/auth', this.user, options).subscribe(function (res) {
+            localStorage.removeItem('user');
+            if (res.json().id != null) {
+                localStorage.setItem('user', JSON.stringify(res.json()));
+                _this.nav.setRoot('MainTabsPage');
+            }
+            else {
+                var errConfig = {
+                    message: 'Error loging in',
+                    duration: 3000,
+                    position: 'top'
+                };
+                var t = _this.toast.create(errConfig);
+                t.present();
+            }
+        }, function (err) {
+            var errConfig = {
+                message: 'Error loging in',
+                duration: 3000,
+                position: 'top'
+            };
+            var t = _this.toast.create(errConfig);
+            t.present();
+        });
     };
-    // go to select location page
-    HomePage.prototype.selectLocation = function () {
-        this.nav.push('SelectLocationPage');
+    // process login
+    LoginPage.prototype.fblogin = function () {
+        var _this = this;
+        var permission_set = ['email',
+            'public_profile',
+            'read_custom_friendlists',
+            'user_about_me',
+            'user_birthday',
+            'user_education_history',
+            'user_friends',
+            'user_hometown',
+            'user_location',
+            'user_relationship_details',
+            'user_relationships',
+            'user_religion_politics',
+            'user_work_history',
+            'user_actions.books',
+            'user_actions.fitness',
+            'user_actions.music',
+            'user_actions.news',
+            'user_actions.video',
+            'user_games_activity',
+            'user_likes',
+            'user_photos',
+            'user_posts',
+            'user_tagged_places',
+            'user_videos',
+            'user_website'];
+        this.facebook.login(permission_set)
+            .then(function (response) {
+            _this.facebook.api('me?fields=id,name,email,address,friends,location,first_name,picture.width(720).height(720).as(picture_large)', []).then(function (profile) {
+                _this.userData = { locations: profile['location'], email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name'], address: profile['address'], friends: profile['friends'] };
+                console.log(JSON.stringify(_this.userData));
+                console.log(_this.userData);
+            });
+        });
     };
-    // go to places
-    HomePage.prototype.viewPlaces = function () {
-        this.app.getRootNav().push('PlacesPage');
+    // go to sign up page
+    LoginPage.prototype.signUp = function () {
+        // add our sign up code here
+        this.nav.push('SignUpPage');
     };
-    // view a place
-    HomePage.prototype.viewPlace = function (id) {
-        this.app.getRootNav().push('PlaceDetailPage', { id: id });
-    };
-    // go to search page
-    HomePage.prototype.goToSearch = function () {
-        this.app.getRootNav().push('SearchPage');
-    };
-    // go to bookmarks page
-    HomePage.prototype.goToBookmarks = function () {
-        this.app.getRootNav().push('BookmarksPage');
-    };
-    // view map
-    HomePage.prototype.goToMap = function () {
-        this.app.getRootNav().push('MapPage');
-    };
-    // view nearby page
-    HomePage.prototype.goToNearBy = function () {
-        this.app.getRootNav().push('NearbyPage');
-    };
-    HomePage = __decorate([
+    LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\home\home.html"*/'<!--\n\n  Generated template for the HomePage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n  <ion-navbar color="primary"  hideBackButton="true">\n\n    <button  ion-button class="nav-button" (click)="selectLocation()">\n\n      {{ currentLocation }}\n\n      <ion-icon name="ios-arrow-down" class="text-md"></ion-icon>\n\n    </button>\n\n    <ion-buttons end>\n\n      <button  ion-button (click)="goToBookmarks()">\n\n        <ion-icon name="bookmark"></ion-icon>\n\n      </button>\n\n      <button  ion-button (click)="goToSearch()">\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class=" common-bg">\n\n\n\n  \n\n  <ion-list class="list-no-border">\n\n    <h1>Order For Delivery Now</h1>\n\n\n\n    <!-- <div scroll="false">\n\n      <div class="div1">\n\n        <h2>Div 1</h2>\n\n      </div>\n\n      <div class="div2">\n\n        <h2>Div 2</h2>\n\n      </div>\n\n    </div> -->\n\n\n\n    <ion-card *ngFor="let item of restaurants">\n\n      <div scroll="false" class="container" (click)="open_r(item)">\n\n        <div class="fill div1">\n\n          <!-- <img src={{item.wide_image}}> -->\n\n\n\n          <img src="https://www.desi-compile.com/wp-content/uploads/2016/11/indianchat2.jpg">\n\n        </div>\n\n        <p id="only" class="div2">\n\n          Deals\n\n        </p>\n\n        <p id="only" class="div3">\n\n          45 min\n\n        </p>\n\n        <div style="height:120px;width:100%;"></div>\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="{{item.logo_url}}">\n\n          </ion-avatar>\n\n          <h2>{{item.title}}</h2>\n\n          <p>{{item.timing}}</p>\n\n        </ion-item>\n\n  \n\n        <ion-card-content>\n\n          <p>{{item.cuisines}}</p>\n\n        </ion-card-content>\n\n        \n\n        <!-- <ion-row>\n\n          <ion-col>\n\n            <button ion-button icon-left clear small>\n\n              <ion-icon name="thumbs-up"></ion-icon>\n\n              <div>12 Likes</div>\n\n            </button>\n\n          </ion-col>\n\n          <ion-col>\n\n            <button ion-button icon-left clear small>\n\n              <ion-icon name="text"></ion-icon>\n\n              <div>4 Comments</div>\n\n            </button>\n\n          </ion-col>\n\n        </ion-row> -->\n\n      </div>\n\n  \n\n    </ion-card>\n\n  </ion-list>\n\n\n\n  <!-- Slider\n\n  <ion-slides pager class="pager-inner">\n\n\n\n    <ion-slide *ngFor="let slide of slides">\n\n      <img src="{{ slide.src }}" alt="">\n\n    </ion-slide>\n\n\n\n  </ion-slides>\n\n\n\n  <div padding>\n\n    <ion-item padding color="light"  class="no-border" (click)="goToNearBy()">\n\n      <ion-icon name="pin"></ion-icon>\n\n      Nearby\n\n      <ion-icon name="arrow-forward" color="secondary"  class="pull-right"></ion-icon>\n\n    </ion-item>\n\n\n\n    <div text-center margin-top margin-bottom class="secondary">\n\n      Here are 6 ways to think about your next meal\n\n    </div>\n\n\n\n    <ion-grid class="grid-no-padding">\n\n\n\n      <ion-row>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Breakfast</ion-item>\n\n        </ion-col>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Delivery</ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Lunch</ion-item>\n\n        </ion-col>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Dinner</ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">Take out</ion-item>\n\n        </ion-col>\n\n\n\n        <ion-col>\n\n          <ion-item class="no-border" (click)="viewPlaces()">See All</ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n    <ion-item class="margin-top no-border light-bg" (click)="goToNearBy()">\n\n      <ion-icon name="pin"></ion-icon>\n\n      All places in {{ currentLocation }}\n\n      <ion-icon name="arrow-forward" color="secondary"  class="pull-right"></ion-icon>\n\n    </ion-item>\n\n\n\n  </div>\n\n\n\n  <div text-center class="secondary margin-top margin-bottom">\n\n    Popular nearby\n\n  </div>\n\n\n\n  <div class="light-bg card" margin-bottom>\n\n    <ion-grid>\n\n      <ion-row wrap>\n\n        <ion-col class="rlt" col-4 *ngFor="let place of popularPlaces" (click)="viewPlace(place.id)">\n\n          <img class="round" src="{{ place.photos[0].thumb }}" alt="">\n\n          <div class="item-rating">{{ place.rating }}</div>\n\n          <div class="text-md strong">{{ place.name }}</div>\n\n          <div class="text-sm secondary">{{ place.district }}</div>\n\n          <div class="text-sm secondary">{{ place.cuisines }}</div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <div class="block-footer" padding text-right (click)="viewPlaces()">\n\n      <span ion-text color="primary" >See more ></span>\n\n    </div>\n\n  </div> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\home\home.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Food Pool</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="signUp()" class="light">Sign up</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="login">\n\n  <ion-slides autoplay=3000 loop=true style="height:100%;width:100%;" zoom>\n\n  \n\n    <ion-slide style="background-color:white;" class="fill">\n\n      <img class="fill" src="https://apis.xogrp.com/media-api/images/d2d7c5af-d3e0-4371-8e53-cc9d37b140d6~rs_768.h" alt="">\n\n    </ion-slide>\n\n  \n\n    <ion-slide style="background-color:white;" class="fill">\n\n      <img  class="fill" src="https://cdn.photographylife.com/wp-content/uploads/2014/06/Camera-Phone-Food-Photography-27.jpg" alt="">\n\n    </ion-slide>\n\n  \n\n    <!-- <ion-slide>\n\n      <img class="fill" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbvfNeOF-c4Gz2YUXGNfojS8IKmu7XeDUB8Gz5azVq7h3heYz6ghttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAODDlD_pkMIWRltonD2Y7FBgBI5Oz--PccGB9qpZi3Fqq7IDLhttp://veganfamilyrecipes.com/wp-content/uploads/2015/12/thai-biscuit-mini-sandwiches-768x1024.jpg" alt="" class="fill">      \n\n    </ion-slide> -->\n\n  \n\n  </ion-slides>\n\n    <h1 class="h" style="font-family: \'verdana\'; font-size: 45px; color: black;">FoodPool</h1>\n\n  \n\n  <div id=\'one\' style="width: 100%;">\n\n    <div style="margin-left:55px;margin-bottom:10px;">\n\n      <input [(ngModel)]="user.email" placeholder="Username" style="padding: 10px;margin:auto; width: 80%;" />\n\n\n\n    </div>\n\n    <div style="margin-left:55px;">\n\n         <input [(ngModel)]="user.password" placeholder="Password" style="padding: 10px;margin:auto; width: 80%;" />\n\n    </div>\n\n    <div style="text-align: center; padding: 10px;">\n\n           <button ion-button style="width: 80%; " (click)="login_via_email()">Login via Email</button>\n\n    </div>\n\n           <button ion-button (click)="fblogin()" round color="facebook" block class="margin-bottom" style="width:95%;text-align:center;">Login via Facebook</button>\n\n  </div>\n\n  <!-- <ion-card *ngIf="userData">\n\n    <ion-card-header>{{ userData.username }}</ion-card-header>\n\n    <img [src]="userData.picture" />\n\n    <ion-card-content>\n\n      <p>id: {{ userData.id }}</p>\n\n      \n\n      <p>Email: {{ userData.email }}</p>\n\n      <p>First Name: {{ userData.first_name }}</p>\n\n      <p>Friends: {{ userData.friends }}</p>\n\n      <p>Location: {{ userData.locations }}</p>\n\n      <p>Address: {{ userData.address }}</p>\n\n      \n\n      \n\n      \n\n    </ion-card-content>\n\n  </ion-card> -->\n\n  <!-- <button ion-button color="googleplus" block class="margin-top">Login via Google+</button>\n\n\n\n  <div text-center class="margin-top-20 secondary">OR LOGIN USING EMAIL</div>\n\n\n\n  <ion-list class="list-form">\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="text" placeholder="Email or username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item class="margin-top">\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button ion-button color="secondary" block (click)="login()">LOGIN</button>\n\n\n\n  <div text-center class="margin-top-20 secondary" (click)="forgotPwd()">Forgot password?</div> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\tooth\OneDrive\Desktop\foodpool\foodpool\src\pages\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_place_service__["a" /* PlaceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular_components_alert_alert_controller__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_http__["a" /* HTTP */]])
-    ], HomePage);
-    return HomePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_facebook__["a" /* Facebook */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_http__["a" /* HTTP */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
+    ], LoginPage);
+    return LoginPage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

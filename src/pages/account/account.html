@@ -23,7 +23,7 @@
     <ion-avatar item-left>
       <img src="assets/img/user/mike.png" alt="">
     </ion-avatar>
-    <span class="strong">Hassan Ali</span>
+    <span class="strong">{{this.user.username}}</span>
     <ion-icon name="ios-arrow-forward" item-right></ion-icon>
   </ion-item>
 
@@ -81,7 +81,7 @@
       <ion-icon name="star"></ion-icon>
       Rate us
     </ion-item>
-    <ion-item>
+    <ion-item (click)="logout()">
       <ion-icon name="ios-exit"></ion-icon>
       Sign out
     </ion-item>
